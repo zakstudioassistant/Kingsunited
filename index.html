@@ -265,7 +265,7 @@ $$('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('
 /* detail modal: clicking any program, role or activity reveals a relevant moving image plus details */
 function detail(img,title,html){$('#dvi').src=TIMG[img]||img;$('#dvt').textContent=title;$('#dvd').innerHTML=html;$('#dv').classList.add('on')}
 $('#dvx').onclick=()=>$('#dv').classList.remove('on');$('#dv').addEventListener('click',e=>{if(e.target.id==='dv')$('#dv').classList.remove('on')});
-$$('.icard[data-di]').forEach(c=>c.addEventListener('click',()=>{const h=c.querySelector('h3'),p=c.querySelector('p');detail(c.dataset.di,h?h.textContent:'',p?'<p>'+p.innerHTML+'</p>':'')}));
+$$('.icard[data-di]').filter(c=>!c.closest('#teamcards')).forEach(c=>c.addEventListener('click',()=>{const h=c.querySelector('h3'),p=c.querySelector('p');detail(c.dataset.di,h?h.textContent:'',p?'<p>'+p.innerHTML+'</p>':'')}));
 $$('.sw[data-di]').forEach(s=>s.addEventListener('click',()=>{const o=s.querySelector('.o').textContent,n=s.querySelector('.n').textContent;detail(s.dataset.di,'A Partnership, Not A Package','<p><s style="color:#aab">'+o+'</s></p><p style="margin-top:8px">◆ '+n+'</p>')}));
 $$('.panel li[data-di]').forEach(li=>li.addEventListener('click',()=>{const h=li.closest('.panel').querySelector('h3');detail(li.dataset.di,li.textContent,'<p>'+(h?h.textContent+' program':'')+' · tap the image to zoom</p>')}));
 $$('#teamcards .card').forEach(c=>c.onclick=e=>{$$('#teamcards .card').forEach(x=>x.classList.toggle('act',x===c));$('#teaminfo').textContent=c.dataset.t;if(e.isTrusted)detail(c.dataset.di,c.querySelector('h3').textContent,'<p>'+c.dataset.t+'</p>')});
