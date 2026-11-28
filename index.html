@@ -340,7 +340,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js?v=6e"></script><script src="d5.js?v=6e"></script><script src="d6.js?v=6e"></script><script src="d7.js?v=6e"></script><script src="d8.js?v=6e"></script><script src="d9.js?v=6e"></script><script src="d10.js?v=6e"></script><script src="d11.js?v=6e"></script><script src="d12.js?v=6e"></script><script src="d14.js?v=6e"></script>
+<script src="d4.js?v=6f"></script><script src="d5.js?v=6f"></script><script src="d6.js?v=6f"></script><script src="d7.js?v=6f"></script><script src="d8.js?v=6f"></script><script src="d9.js?v=6f"></script><script src="d10.js?v=6f"></script><script src="d11.js?v=6f"></script><script src="d12.js?v=6f"></script><script src="d14.js?v=6f"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -352,8 +352,8 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src='img/logo-mark.webp?v=6e';$('#herologo').src='img/logo-full.webp?v=6e';
-{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6e';document.head.append(l)}
+$('#navlogo').src='img/logo-mark.webp?v=6f';$('#herologo').src='img/logo-full.webp?v=6f';
+{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6f';document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
@@ -452,7 +452,7 @@ const coarse=matchMedia('(pointer:coarse)').matches;
 const upd=()=>{const cr=car.getBoundingClientRect(),cc=cr.left+cr.width/2;
 [...car.children].forEach(it=>{const r=it.getBoundingClientRect(),d=((r.left+r.width/2)-cc)/cr.width;
 if(coarse){it.style.transform='scale('+(1-Math.min(Math.abs(d)*.08,.16))+')'}else{
-it.style.transform='rotateY('+(-d*30)+'deg) translateZ('+(-Math.abs(d)*180)+'px) scale('+(1-Math.min(Math.abs(d)*.14,.28))+')')}
+it.style.transform='rotateY('+(-d*30)+'deg) translateZ('+(-Math.abs(d)*180)+'px) scale('+(1-Math.min(Math.abs(d)*.14,.28))+')'}
 it.style.opacity=1-Math.min(Math.abs(d)*.4,.55);
 const img=it.querySelector('img');if(img)img.style.objectPosition=(50+d*36)+'% 50%'})};
 car.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
