@@ -100,7 +100,7 @@ h2{font-size:clamp(1.9rem,6.4vw,3.1rem);margin:10px 0 8px;line-height:1.08}
 .panel .pim{position:relative;min-height:180px}
 .panel .pim img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;animation:kbin 12s ease-in-out infinite alternate}
 @keyframes kbin{from{transform:scale(1)}to{transform:scale(1.12)}}
-.panel .pinfo{padding:20px}
+.panel .pinfo{padding:20px;min-width:0}
 .panel h3{font-size:1.3rem;margin-bottom:12px}
 .panel ul{list-style:none}
 .panel li{padding:10px 14px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.9rem;cursor:pointer;transition:.25s}
@@ -340,7 +340,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js?v=6f"></script><script src="d5.js?v=6f"></script><script src="d6.js?v=6f"></script><script src="d7.js?v=6f"></script><script src="d8.js?v=6f"></script><script src="d9.js?v=6f"></script><script src="d10.js?v=6f"></script><script src="d11.js?v=6f"></script><script src="d12.js?v=6f"></script><script src="d14.js?v=6f"></script>
+<script src="d4.js?v=6g"></script><script src="d5.js?v=6g"></script><script src="d6.js?v=6g"></script><script src="d7.js?v=6g"></script><script src="d8.js?v=6g"></script><script src="d9.js?v=6g"></script><script src="d10.js?v=6g"></script><script src="d11.js?v=6g"></script><script src="d12.js?v=6g"></script><script src="d14.js?v=6g"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -352,8 +352,8 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src='img/logo-mark.webp?v=6f';$('#herologo').src='img/logo-full.webp?v=6f';
-{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6f';document.head.append(l)}
+$('#navlogo').src='img/logo-mark.webp?v=6g';$('#herologo').src='img/logo-full.webp?v=6g';
+{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6g';document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
