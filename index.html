@@ -117,6 +117,14 @@ h2{font-size:clamp(1.9rem,6.4vw,3.1rem);margin:10px 0 8px;line-height:1.08}
 .fl img{width:40px;height:40px;border-radius:50%;object-fit:cover;pointer-events:none}
 .fl.txt{padding:10px 18px;cursor:default;font-weight:500}
 .fl.txt b{color:var(--sun)}
+/* full-size activity sliders */
+.panel.act{display:block}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:14px;border-radius:18px;-webkit-overflow-scrolling:touch}
+.gal::-webkit-scrollbar{display:none}
+.gs{position:relative;flex:0 0 100%;scroll-snap-align:center;height:250px;cursor:pointer;overflow:hidden}
+.gs img{width:100%;height:100%;object-fit:cover;animation:kbin 14s ease-in-out infinite alternate;pointer-events:none}
+.gs span{position:absolute;left:0;right:0;bottom:0;padding:44px 18px 13px;background:linear-gradient(transparent,rgba(5,10,18,.88));font-weight:700;font-size:1.05rem}
+@media(min-width:860px){.gs{height:340px}}
 /* event preview */
 #evview{display:none;margin-top:22px;border-radius:22px;overflow:hidden;background:rgba(10,26,42,.6);border:1px solid rgba(255,201,60,.35);backdrop-filter:blur(8px)}
 #evview.on{display:grid;grid-template-columns:1fr;animation:pop .5s}
@@ -330,7 +338,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js?v=6b"></script><script src="d5.js?v=6b"></script><script src="d6.js?v=6b"></script><script src="d7.js?v=6b"></script><script src="d8.js?v=6b"></script><script src="d9.js?v=6b"></script><script src="d10.js?v=6b"></script><script src="d11.js?v=6b"></script><script src="d12.js?v=6b"></script><script src="d14.js?v=6b"></script>
+<script src="d4.js?v=6c"></script><script src="d5.js?v=6c"></script><script src="d6.js?v=6c"></script><script src="d7.js?v=6c"></script><script src="d8.js?v=6c"></script><script src="d9.js?v=6c"></script><script src="d10.js?v=6c"></script><script src="d11.js?v=6c"></script><script src="d12.js?v=6c"></script><script src="d14.js?v=6c"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -342,8 +350,8 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src='img/logo-mark.webp?v=6b';$('#herologo').src='img/logo-full.webp?v=6b';
-{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6b';document.head.append(l)}
+$('#navlogo').src='img/logo-mark.webp?v=6c';$('#herologo').src='img/logo-full.webp?v=6c';
+{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6c';document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
@@ -382,6 +390,10 @@ if(!txt){const im=new Image;im.src=TIMG[a[1]];im.alt=a[0];im.loading='lazy';p.ap
 const s=document.createElement('span');s.innerHTML=a[0];p.append(s);
 if(a[2])p.onclick=a[2];t.append(p)});
 f.append(t);host.append(f)}
+function gslide(gal){let manual=0;
+gal.addEventListener('pointerdown',()=>manual=Date.now(),{passive:true});
+setInterval(()=>{if(Date.now()-manual<7000)return;if(!gal.clientWidth)return;const r=gal.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+if(gal.scrollLeft+gal.clientWidth>=gal.scrollWidth-12)gal.scrollTo({left:0,behavior:'smooth'});else gal.scrollBy({left:gal.clientWidth,behavior:'smooth'})},3800)}
 /* daytime */
 const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yoga"],["Boccia","boccia"],["Daily Program Announcements","welcome"]]],
 ["Midday · High Energy Focus","aqua",[["Aqua Aerobics","aqua"],["Water Polo","poolwoman"],["Poolside Games & Pool Party","poolparty"],["Beach Volleyball","volleyball"]]],
@@ -389,13 +401,10 @@ const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yo
 const dtab=$('#dtabs'),dpan=$('#dpanels');
 day.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#dtabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#dpanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};dtab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
-pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3></div>';
-pn.querySelector('img').src=TIMG[d[1]];
-const its=d[2].map(a=>[a[0],a[1],()=>detail(a[1],a[0],'<p>'+d[0]+' program · tap the image to zoom</p>')]);
-const pi=pn.querySelector('.pinfo');
-flow(pi,its.filter((_,i)=>!(i%2)));
-if(its.length>2)flow(pi,its.filter((_,i)=>i%2),false,true);
-pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
+pn.innerHTML='<div class="pinfo"><h3>'+d[0]+'</h3><div class="gal"></div></div>';
+const gal=pn.querySelector('.gal');
+d[2].forEach(a=>{const g=document.createElement('div');g.className='gs';const im=new Image;im.src=TIMG[a[1]];im.alt=a[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=a[0];g.append(im,sp);g.onclick=()=>detail(a[1],a[0],'<p>'+d[0]+' program · tap the image to zoom</p>');gal.append(g)});
+gslide(gal);
 dpan.append(pn)});
 /* evening */
 const night=[["High-Energy & Party","foam",[["Mini Disco","kidsdisco"],["Beach Party","beachnight"],["Foam Party","foam"]]],
@@ -404,13 +413,10 @@ const night=[["High-Energy & Party","foam",[["Mini Disco","kidsdisco"],["Beach P
 const ntab=$('#ntabs'),npan=$('#npanels');
 night.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#ntabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#npanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};ntab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
-pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3></div>';
-pn.querySelector('img').src=TIMG[d[1]];
-const its=d[2].map(a=>[a[0],a[1],()=>detail(a[1],a[0],'<p>Evening program · tap the image to zoom</p>')]);
-const pi=pn.querySelector('.pinfo');
-flow(pi,its.filter((_,i)=>!(i%2)));
-if(its.length>2)flow(pi,its.filter((_,i)=>i%2),false,true);
-pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
+pn.innerHTML='<div class="pinfo"><h3>'+d[0]+'</h3><div class="gal"></div></div>';
+const gal=pn.querySelector('.gal');
+d[2].forEach(a=>{const g=document.createElement('div');g.className='gs';const im=new Image;im.src=TIMG[a[1]];im.alt=a[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=a[0];g.append(im,sp);g.onclick=()=>detail(a[1],a[0],'<p>Evening program · tap the image to zoom</p>');gal.append(g)});
+gslide(gal);
 npan.append(pn)});
 /* events */
 const evs=[["Carnival Night","carnival","Costumes, parade energy and street performers."],["Foam Party","foam","Foam cannons, DJ and non-stop dancing."],["Colour Party","holi","A powder-colour celebration at sunset."],["Olympic Day","olympic","Guests compete in fun team games all day."],["Inflatable Fun Day","inflatable","Giant inflatables on the beach and lawn."],["White Party","whiteparty","All-white dress code, an elegant night under the lights."],["African Night","african","Drums, dance and African rhythms."],["Boho Night","boho","Bohemian styling, lanterns and laid-back music."],["Pharaonic Night","pharaonic","Ancient-Egypt themed show, costume and décor."],["Pink Party","pink","Pink dress code, neon lights and feel-good pop."],["Aloha Party","aloha","A Hawaiian luau with leis and island beats."],["Arabian Nights","arabian","Lanterns, oriental music and Arabian atmosphere."]];
