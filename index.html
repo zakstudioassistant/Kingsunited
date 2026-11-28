@@ -345,10 +345,6 @@ setInterval(()=>{r.classList.add('out');setTimeout(()=>{wi=(wi+1)%words.length;r
 /* marquee */
 {const items=['Foam Party','Carnival Night','Fire Show','Mini Disco','Colour Party','Beach Volleyball','Aqua Aerobics','Live Singer','Aloha Party','White Party','Kids Disco','Acrobatic Show','Pink Party','Arabian Nights','New Year Gala','Ramadan Nights'];
 $('#marq').innerHTML=(items.map(i=>'<span>✦ '+i+'</span>').join('')).repeat(2)}
-#led{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
-#led i{position:absolute;border-radius:50%;opacity:.22;animation:twk ease-in-out infinite alternate}
-@keyframes twk{from{opacity:.06;transform:translateY(0) scale(.8)}to{opacity:.45;transform:translateY(-34px) scale(1.15)}}
-.grad-text{filter:drop-shadow(0 0 22px rgba(255,79,160,.22))}
 /* scroll progress */
 addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 /* detail modal + lightbox */
@@ -414,17 +410,6 @@ sw.forEach(s=>{const d=document.createElement('div');d.className='sw';const im=n
 const pil=[["✨","Bespoke Programming","Every calendar shaped around your concept.","calendar"],["🎬","Polished Delivery","Professional execution guests notice, without seeing the effort.","stagesetup"],["💫","Lasting Impressions","Moments guests carry home, and return for.","applause"],["🤝","Collaborative Partnership","Aligned with your goals, season after season.","handshake"]];
 pil.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[3]];im.alt=w[1];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+' '+w[1]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[3],w[1],'<p>'+w[2]+'</p>');$('#pillargrid').append(c)});
 /* 3D carousels */
-.carwrap{position:relative;margin:24px -5vw 0}
-.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 12vw;perspective:1100px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.car::-webkit-scrollbar{display:none}
-.car>*{flex:0 0 min(68vw,290px);scroll-snap-align:center;will-change:transform;transition:border-color .3s,box-shadow .3s}
-.car>.sw{flex-basis:min(82vw,350px)}
-.car .tile,.car .card{border-radius:30px 40px 28px 42px;transform-style:preserve-3d}
-.car .tile{aspect-ratio:3/4}
-.car .card img{height:190px}
-.carbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(7,19,31,.65);color:var(--sun);font-size:1.15rem;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center;transition:.25s}
-.carbtn:hover{background:var(--sun);color:#131020}
-.carbtn.l{left:1.5vw}.carbtn.r{right:1.5vw}
 function carfy(car){
 const upd=()=>{const cr=car.getBoundingClientRect(),cc=cr.left+cr.width/2;
 [...car.children].forEach(it=>{const r=it.getBoundingClientRect(),d=((r.left+r.width/2)-cc)/cr.width;
