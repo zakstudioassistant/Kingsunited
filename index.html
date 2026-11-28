@@ -1,296 +1,388 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>King's United Entertainment Company | Partnership Proposal 2026/2027</title>
-<meta name="description" content="Hotel entertainment and guest experience partnership proposal for the Red Sea, Egypt, 2026/2027.">
-<meta property="og:title" content="King's United Entertainment Company | Partnership Proposal">
-<meta property="og:description" content="Hotel entertainment and guest experience. Signature experiences, engaged guests, elevated standards.">
-
-
+<title>King's United Entertainment Company | Red Sea, Egypt</title>
+<meta name="description" content="King's United Entertainment Company: hotel entertainment and guest experience on the Red Sea, Egypt. Daytime fun, spectacular nights, kids club and signature weekly events.">
+<meta property="og:title" content="King's United Entertainment Company">
+<meta property="og:description" content="We bring the party. Daytime energy, spectacular nights, kids club and signature events across the Red Sea.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#d8b26a;--gold2:#f0d594;--bg:#07090f;--card:#10141f;--line:#262c3d;--tx:#e9e6df;--mut:#9aa0b0}
+:root{--navy:#07131f;--deep:#0a1c2e;--ink:#f3f8f8;--mut:#a8bcc4;--aqua:#17d3da;--coral:#ff6b5e;--sun:#ffc93c;--mag:#ff4fa0;--viol:#9b6bff;--gold:#ffd98a;
+--grad:linear-gradient(90deg,var(--sun),var(--coral),var(--mag),var(--viol),var(--aqua))}
 *{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--tx);font-family:'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6}
-h1,h2,h3{font-family:Georgia,'Playfair Display',serif;font-weight:600}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;gap:20px;padding:10px 28px;background:rgba(7,9,15,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav img{height:38px}nav b{color:var(--gold);letter-spacing:.12em;font-size:.85rem;margin-right:auto}
-nav a{color:var(--tx);text-decoration:none;font-size:.85rem;opacity:.8}nav a:hover{color:var(--gold);opacity:1}
-#bar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:60;width:0}
-section{padding:96px 8vw 40px;max-width:1300px;margin:auto}
-.eyebrow{color:var(--gold);letter-spacing:.2em;font-size:.78rem;text-transform:uppercase}
-h2{font-size:clamp(2rem,4vw,3.2rem);margin:6px 0 18px}
-.lead{color:var(--mut);max-width:760px;font-size:1.08rem}
-#hero{min-height:100vh;max-width:none;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}#hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(7,9,15,.30),rgba(7,9,15,.62)),var(--p32393942) center/cover;z-index:-1;animation:zoom 28s ease-in-out infinite alternate}#hero>*{position:relative}#hero .logo{height:150px;margin-bottom:26px;border-radius:6px;box-shadow:0 0 60px rgba(216,178,106,.35)}
-#hero h1{font-size:clamp(2.6rem,7vw,5.5rem);margin:10px 0}
-#hero .sub{letter-spacing:.3em;color:var(--gold2);font-size:.85rem}
-.btn{display:inline-block;margin-top:28px;padding:13px 30px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;border-radius:2px;letter-spacing:.1em;transition:.25s;background:none;cursor:pointer;font-size:.9rem}
-.btn:hover{background:var(--gold);color:#000}
-.tags{margin-top:34px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;font-size:.78rem;letter-spacing:.2em;color:var(--mut)}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:30px}
-.card{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:6px;transition:.3s}
-.card:hover{transform:translateY(-4px);border-color:var(--gold)}
-.card h3{color:var(--gold);margin-bottom:6px;font-size:1.2rem}.card p{color:var(--mut);font-size:.92rem}
-.ic{font-size:1.7rem;margin-bottom:8px}
-.reveal{opacity:0;transform:translateY(24px);transition:.8s}.reveal.on{opacity:1;transform:none}
-table{width:100%;border-collapse:collapse;margin-top:26px}
-td{padding:14px 16px;border-bottom:1px solid var(--line)}td:first-child{color:var(--mut);width:34%;text-decoration:line-through;text-decoration-color:#554}
-td:last-child:before{content:'◆ ';color:var(--gold)}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}
-.tab,.chip{padding:9px 20px;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:30px;cursor:pointer;font-size:.88rem;transition:.2s}
-.tab.act,.chip.act,.tab:hover,.chip:hover{background:var(--gold);color:#000;border-color:var(--gold)}
-.panel{display:none;gap:30px;grid-template-columns:1.1fr 1fr;align-items:center}.panel.act{display:grid}
-.panel .pim{overflow:hidden;border-radius:14px;border:1px solid var(--line)}
-.panel img{width:100%;display:block;cursor:zoom-in}
-.panel h3{font-size:1.8rem;color:var(--gold2)}.panel ul{list-style:none;padding:0;margin-top:12px}
-.panel li{padding:6px 0 6px 8px;border-bottom:1px solid var(--line);color:var(--tx)}.panel li:before{content:'◆ ';color:var(--gold);font-size:.7rem}
-.items{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.pill{padding:6px 14px;border:1px solid var(--line);border-radius:20px;font-size:.85rem;background:var(--card);cursor:pointer}
-.pill.act{background:var(--gold);color:#000}
-#evnote{margin-top:14px;color:var(--mut);min-height:1.6em}
-.deck{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-top:26px}
-.deck img{width:100%;border-radius:4px;border:1px solid var(--line);cursor:zoom-in;transition:.3s}.deck img:hover{transform:scale(1.04);border-color:var(--gold)}
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.93);display:none;align-items:center;justify-content:center;z-index:100;flex-direction:column}
-#lb.on{display:flex}#lb img{max-width:94vw;max-height:84vh;border-radius:4px}
-#lb .c{margin-top:14px;display:flex;gap:14px;align-items:center;color:var(--mut)}
-#lb button{background:none;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;cursor:pointer;border-radius:3px}
-.team{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:24px}
-.team .card{cursor:pointer;text-align:center}.team .card.act{border-color:var(--gold);background:#17140c}
-#teaminfo{margin-top:16px;color:var(--mut);min-height:3em}
-#contact{text-align:center;padding-bottom:110px}
-#contact .ph{font-family:Georgia,serif;font-size:clamp(2.2rem,6vw,4.4rem);color:var(--gold2);text-decoration:none;display:block;margin:14px 0;letter-spacing:.05em}
-footer{text-align:center;padding:24px;color:var(--mut);font-size:.8rem;border-top:1px solid var(--line)}
-@media(max-width:800px){nav a{display:none}.panel.act{grid-template-columns:1fr}section{padding:84px 6vw 30px}}
-#bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#07101c}
-#bgfx i{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;animation:fade 32s infinite}
-#bgfx i:nth-child(1){background-image:var(--p12169315);animation-delay:0s}
-#bgfx i:nth-child(2){background-image:var(--p39591184);animation-delay:8s}
-#bgfx i:nth-child(3){background-image:var(--p39550243);animation-delay:16s}
-#bgfx i:nth-child(4){background-image:var(--p32393942);animation-delay:24s}
-#bgfx:after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(7,12,24,.25),rgba(7,12,24,.45))}
-@keyframes fade{0%{opacity:0;transform:scale(1)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.1)}100%{opacity:0;transform:scale(1.1)}}
-@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.1)}}
-@media (prefers-reduced-motion:reduce){#bgfx i,#hero:before{animation:none}#bgfx i:first-child{opacity:1}}
-section{background:rgba(7,12,24,.58)}
-#hero{background:none}
-.card,.pill,.tab,.chip,.team .card.act{background:rgba(10,16,30,.38)!important;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-color:rgba(216,178,106,.35)}
-.tab.act,.chip.act,.tab:hover,.chip:hover,.pill.act{background:var(--gold)!important;backdrop-filter:none}
-section{background:rgba(7,12,24,.18)!important}
-h1,h2,h3,.lead,p,td,li,.card p{text-shadow:0 1px 6px rgba(0,0,0,.75)}
-.card p,.lead,td:first-child{color:#d6d9e2}
-
-/* v2 compact + cute */
-section{padding:62px 7vw 14px!important}
-h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin:2px 0 10px}
-.lead{font-size:.98rem;line-height:1.55}
-.grid{gap:12px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.card{padding:14px 16px;border-radius:14px}
-.card h3{font-size:1.05rem}.card p{font-size:.88rem;line-height:1.45}
-.ic{font-size:1.6rem;margin-bottom:2px;display:inline-block;animation:bob 3.2s ease-in-out infinite}
-.card:nth-child(2n) .ic{animation-delay:-1s}.card:nth-child(3n) .ic{animation-delay:-2s}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(6deg)}}
-.card:hover .ic{animation-duration:.8s}
-.card,.pill,.tab,.chip{border-radius:16px!important}
-.tab,.pill{border-radius:30px!important}
-.swg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;margin-top:18px}
-.sw{display:grid;grid-template-columns:88px 1fr auto;gap:2px 14px;align-items:center;padding:12px;border-radius:18px;background:rgba(10,16,30,.42);backdrop-filter:blur(7px);border:1px solid rgba(216,178,106,.35);transition:.3s;cursor:pointer;overflow:hidden}
-.sw .th{grid-column:1;grid-row:1/3;width:88px;height:74px;object-fit:cover;border-radius:12px;border:1px solid rgba(216,178,106,.3);transition:.4s}
-.sw:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+body{background:var(--navy);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Fredoka','Outfit',system-ui,sans-serif;font-weight:600;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}
+img{display:block}
+/* moving sea background */
+#bg{position:fixed;inset:-4%;z-index:-2;background-size:cover;background-position:center;animation:kenburns 26s ease-in-out infinite alternate;transition:opacity 1.2s}
+#bg2{position:fixed;inset:-4%;z-index:-2;background-size:cover;background-position:center;opacity:0;animation:kenburns 26s ease-in-out infinite alternate-reverse}
+#bgm{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,19,31,.72),rgba(7,19,31,.55) 40%,rgba(7,19,31,.82));pointer-events:none}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,1.5%)}}
+/* floating colour blobs */
+.blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0) scale(1)}50%{transform:translate(4vw,-6vh) scale(1.15)}to{transform:translate(-4vw,5vh) scale(.95)}}
+/* scroll progress */
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:99;border-radius:0 4px 4px 0}
+/* nav */
+nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:10px 4vw;background:rgba(7,19,31,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.09);overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav .brand{display:flex;align-items:center;gap:8px;font-family:'Fredoka';font-weight:700;letter-spacing:.14em;font-size:.86rem;white-space:nowrap}
+nav .brand img{width:30px;height:30px;border-radius:8px}
+nav .sp{flex:1}
+nav a.lnk{white-space:nowrap;font-size:.82rem;font-weight:500;color:var(--mut);padding:7px 12px;border-radius:999px;transition:.25s}
+nav a.lnk:hover{color:var(--ink);background:rgba(255,255,255,.08)}
+nav a.cta{background:var(--grad);color:#10131f;font-weight:700}
+/* hero */
+header{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:90px 5vw 60px;position:relative;overflow:hidden}
+#confetti{position:absolute;inset:0;pointer-events:none}
+#confetti i{position:absolute;width:9px;height:9px;border-radius:3px;opacity:.85;animation:fall linear infinite}
+@keyframes fall{from{transform:translateY(-8vh) rotate(0)}to{transform:translateY(112vh) rotate(560deg)}}
+header .logo{width:min(46vw,220px);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.5);animation:bob 5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+header .eyebrow{margin-top:26px;font-size:.72rem;letter-spacing:.34em;color:var(--sun);font-weight:600}
+header h1{font-size:clamp(2.6rem,11vw,6rem);line-height:1.02;margin:14px 0 6px;font-weight:700}
+.grad-text{background:var(--grad);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:300% 0}}
+header .rot{display:inline-block;min-width:5ch;color:var(--aqua);transition:.3s}
+header .rot.out{opacity:0;transform:translateY(10px)}
+header p.sub{max-width:560px;color:var(--mut);font-size:1.02rem;line-height:1.6;margin-top:10px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.btn{padding:14px 26px;border-radius:999px;font-weight:700;font-size:.95rem;transition:.25s;border:1px solid rgba(255,255,255,.16);display:inline-block}
+.btn.solid{background:var(--grad);background-size:200% 100%;color:#131020;border:none;animation:hue 6s linear infinite}
+.btn.solid:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 14px 34px rgba(255,79,160,.35)}
+.btn.ghost{background:rgba(255,255,255,.06);backdrop-filter:blur(6px)}
+.btn.ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+.cue{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--mut);font-size:1.4rem;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translate(-50%,0);opacity:.5}50%{transform:translate(-50%,10px);opacity:1}}
+/* marquee */
+.marq{overflow:hidden;background:var(--grad);background-size:300% 100%;animation:hue 12s linear infinite;padding:12px 0;transform:rotate(-1.2deg) scale(1.02)}
+.marq .track{display:flex;gap:34px;white-space:nowrap;width:max-content;animation:scroll 26s linear infinite;font-family:'Fredoka';font-weight:600;color:#131020;font-size:1rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* sections */
+section{padding:70px 5vw 30px;max-width:1200px;margin:0 auto}
+.eyebrow{font-size:.7rem;letter-spacing:.32em;font-weight:700;color:var(--aqua)}
+h2{font-size:clamp(1.9rem,6.4vw,3.1rem);margin:10px 0 8px;line-height:1.08}
+.lead{color:var(--mut);max-width:640px;line-height:1.65;font-size:.98rem}
+/* generic cards/tiles */
+.grid{display:grid;gap:14px;margin-top:26px;grid-template-columns:1fr}
+.card{position:relative;border-radius:20px;overflow:hidden;background:rgba(10,26,42,.55);border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:.3s;backdrop-filter:blur(8px)}
+.card img{width:100%;height:150px;object-fit:cover;transition:.5s}
+.card .pad{padding:16px 18px 18px}
+.card h3{font-size:1.12rem;margin-bottom:6px}
+.card p{color:var(--mut);font-size:.88rem;line-height:1.5}
+.card:hover{transform:translateY(-5px);border-color:var(--sun);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+.card:hover img{transform:scale(1.08)}
+.card::after{content:"Tap for more ↗";position:absolute;top:10px;right:10px;background:rgba(7,19,31,.72);color:var(--sun);font-size:.68rem;font-weight:600;padding:5px 10px;border-radius:999px;opacity:0;transition:.3s;backdrop-filter:blur(4px)}
+.card:hover::after{opacity:1}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:24px}
+.tile{position:relative;border-radius:18px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:.3s;aspect-ratio:4/3}
+.tile img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:26px 12px 10px;font-family:'Fredoka';font-weight:600;font-size:.9rem;background:linear-gradient(transparent,rgba(7,19,31,.92))}
+.tile:hover img{transform:scale(1.1)}
+.tile:hover{transform:translateY(-4px)}
+.tile.act{border-color:var(--sun);box-shadow:0 0 0 3px rgba(255,201,60,.25),0 12px 30px rgba(0,0,0,.4)}
+.tile:nth-child(4n+1).act{border-color:var(--coral);box-shadow:0 0 0 3px rgba(255,107,94,.25)}
+.tile:nth-child(4n+2).act{border-color:var(--aqua);box-shadow:0 0 0 3px rgba(23,211,218,.25)}
+.tile:nth-child(4n+3).act{border-color:var(--mag);box-shadow:0 0 0 3px rgba(255,79,160,.25)}
+/* tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.tab{padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);color:var(--mut);font-weight:600;font-size:.85rem;cursor:pointer;transition:.25s;font-family:'Outfit'}
+.tab.on{background:var(--grad);color:#131020;border-color:transparent}
+.panel{display:none;margin-top:20px;border-radius:22px;overflow:hidden;background:rgba(10,26,42,.55);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px)}
+.panel.act{display:grid;grid-template-columns:1fr;animation:pop .5s}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+.panel .pim{position:relative;min-height:180px}
+.panel .pim img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;animation:kbin 12s ease-in-out infinite alternate}
+@keyframes kbin{from{transform:scale(1)}to{transform:scale(1.12)}}
+.panel .pinfo{padding:20px}
+.panel h3{font-size:1.3rem;margin-bottom:12px}
+.panel ul{list-style:none}
+.panel li{padding:10px 14px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.9rem;cursor:pointer;transition:.25s}
+.panel li:hover{background:rgba(255,201,60,.12);border-color:var(--sun);transform:translateX(4px)}
+.panel li b{color:var(--sun)}
+/* event preview */
+#evview{display:none;margin-top:22px;border-radius:22px;overflow:hidden;background:rgba(10,26,42,.6);border:1px solid rgba(255,201,60,.35);backdrop-filter:blur(8px)}
+#evview.on{display:grid;grid-template-columns:1fr;animation:pop .5s}
+#evview .pim{position:relative;min-height:190px}
+#evview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:zoom-in;animation:kbin 12s ease-in-out infinite alternate}
+#evview .pinfo{padding:18px 20px}
+#evview h3{font-size:1.35rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+#evview p{color:var(--mut);margin-top:6px;font-size:.92rem;line-height:1.5}
+#evnote{margin-top:14px;font-size:.85rem;color:var(--sun);font-weight:600}
+.hint{margin-top:14px;color:var(--mut);font-size:.82rem;font-style:italic}
+/* team */
+.team{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.chip{padding:9px 16px;border-radius:999px;font-size:.8rem;font-weight:600;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05)}
+/* swap / promises */
+.swg{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
+.sw{display:grid;grid-template-columns:84px 1fr auto;gap:2px 14px;align-items:center;padding:12px;border-radius:18px;background:rgba(10,26,42,.5);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);transition:.3s;cursor:pointer;overflow:hidden}
+.sw .th{grid-column:1;grid-row:1/3;width:84px;height:70px;object-fit:cover;border-radius:12px;transition:.4s}
+.sw:hover{transform:translateY(-3px);border-color:var(--aqua);box-shadow:0 12px 32px rgba(0,0,0,.4)}
 .sw:hover .th{transform:scale(1.07)}
-.sw .o{grid-column:2/3;color:#aab;font-size:.78rem;text-decoration:line-through;text-decoration-color:#a77}
-.sw .ar{grid-column:3;grid-row:1/3;width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(216,178,106,.55);border-radius:50%;color:var(--gold);font-size:1rem;transition:.3s}
-.sw:hover .ar{background:var(--gold);color:#0a0e1a;transform:rotate(45deg)}
-.sw .n{grid-column:2/3;font-size:.92rem;line-height:1.4}
-.sw:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(120,88,24,.4)}
-.sw:hover .ar{transform:translateX(5px) scale(1.2)}
-.team{gap:10px;margin-top:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
-#teaminfo{margin-top:10px;padding:10px 16px;border-left:3px solid var(--gold);background:rgba(10,16,30,.4);border-radius:0 12px 12px 0;min-height:2.6em;color:#e9e6df;animation:pop .4s}
-.items{gap:7px;margin-top:10px}
-.pill{padding:6px 14px;transition:.25s}.pill:hover{transform:translateY(-2px) rotate(-2deg);border-color:var(--gold)}
-.tabs{margin:14px 0}
-.panel{gap:18px;grid-template-columns:1fr 1fr}
-.panel img{max-height:300px;object-fit:cover}
-.panel.act{animation:pop .45s}
-.panel h3{font-size:1.4rem}.panel li{padding:4px 0 4px 8px}
-.deck{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-top:16px;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent}
-.deck img{flex:0 0 230px;width:230px;max-width:62vw;height:auto;scroll-snap-align:start}
-.dk{display:flex;gap:8px;margin-top:10px}.dk button{background:rgba(10,16,30,.5);border:1px solid var(--gold);color:var(--gold);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem}.dk button:hover{background:var(--gold);color:#000}
-#contact{padding-bottom:60px!important}
-#hero .logo{animation:bob 4s ease-in-out infinite}
-.btn{border-radius:30px;animation:glow 2.6s ease-in-out infinite}
-@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(216,178,106,.5)}50%{box-shadow:0 0 0 10px rgba(216,178,106,0)}}
-@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
-@keyframes popL{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
-.reveal.on .st{animation:pop .5s backwards;animation-delay:calc(var(--i)*60ms)}
-.reveal.on .st.alt{animation-name:popL}
-@media(max-width:800px){nav{gap:16px;overflow-x:auto;padding:10px 16px}nav b{display:none}nav a{display:inline-block;white-space:nowrap}section{padding:56px 5vw 10px!important}.panel.act{grid-template-columns:1fr}.swg{grid-template-columns:1fr}.sw{grid-template-columns:70px 1fr auto}.sw .th{width:70px;height:62px}.grid,.team{grid-template-columns:1fr 1fr;gap:8px}.card h3{font-size:.95rem}.card p{font-size:.8rem}}
-@media (prefers-reduced-motion:reduce){.ic,.btn,#hero .logo{animation:none}.reveal.on .st{animation:none}}
+.sw .k{grid-column:2/3;color:var(--aqua);font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.sw .ar{grid-column:3;grid-row:1/3;width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,201,60,.55);border-radius:50%;color:var(--sun);font-size:1rem;transition:.3s}
+.sw:hover .ar{background:var(--sun);color:#131020;transform:rotate(45deg)}
+.sw .n{grid-column:2/3;font-size:.92rem;line-height:1.45}
+/* provide */
+.prov{display:grid;gap:14px;margin-top:24px;grid-template-columns:1fr}
+.pcard{border-radius:20px;padding:22px;background:rgba(10,26,42,.55);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px)}
+.pcard h3{font-size:1.2rem;margin-bottom:14px}
+.pcard.a{border-top:4px solid var(--coral)}.pcard.b{border-top:4px solid var(--aqua)}
+.pcard ul{list-style:none}
+.pcard li{padding:9px 0 9px 26px;position:relative;color:var(--mut);font-size:.92rem;line-height:1.5;border-bottom:1px dashed rgba(255,255,255,.08)}
+.pcard li:last-child{border:none}
+.pcard li::before{content:"✦";position:absolute;left:0;color:var(--sun)}
+/* contact */
+#contact{text-align:center;padding-bottom:70px}
+#contact .big{font-family:'Fredoka';font-size:clamp(2.6rem,12vw,5rem);font-weight:700;margin-top:18px;display:inline-block;transition:.3s}
+#contact .big:hover{transform:scale(1.04)}
+#contact .note{color:var(--mut);margin-top:14px;font-size:.95rem}
+footer{padding:26px 5vw 40px;text-align:center;color:var(--mut);font-size:.8rem;border-top:1px solid rgba(255,255,255,.08)}
+/* detail modal */
+#dv{position:fixed;inset:0;z-index:80;display:none;place-items:center;background:rgba(4,10,18,.82);backdrop-filter:blur(8px);padding:18px}
+#dv.on{display:grid}
+#dvc{width:min(560px,100%);border-radius:24px;overflow:hidden;background:var(--deep);border:1px solid rgba(255,201,60,.4);animation:pop .45s;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#dvi{width:100%;height:min(48vh,320px);object-fit:cover;cursor:zoom-in;animation:kbin 10s ease-in-out infinite alternate}
+#dvb{padding:20px 22px 24px}
+#dvt{font-size:1.5rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+#dvd{color:var(--mut);margin-top:8px;font-size:.95rem;line-height:1.6}
+#dvx{margin-top:16px;padding:11px 24px;border-radius:999px;border:1px solid rgba(255,201,60,.55);background:transparent;color:var(--sun);font-weight:700;cursor:pointer;font-size:.88rem;transition:.25s}
+#dvx:hover{background:var(--sun);color:#131020}
+/* lightbox */
+#lb{position:fixed;inset:0;z-index:90;display:none;place-items:center;background:rgba(3,7,13,.94);padding:14px}
+#lb.on{display:grid}
+#lbi{max-width:100%;max-height:80vh;border-radius:14px}
+#lb .c{display:flex;gap:14px;align-items:center;margin-top:14px;color:var(--mut);font-size:.9rem}
+#lb button{padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--ink);cursor:pointer;font-size:.95rem;transition:.2s}
+#lb button:hover{border-color:var(--sun);color:var(--sun)}
+/* reveal on scroll */
+.reveal .st{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);transition-delay:calc(var(--i)*70ms)}
+.reveal .st.alt{transform:translateY(34px) rotate(1.5deg)}
+.reveal.vis .st{opacity:1;transform:none}
+section.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+section.reveal.vis{opacity:1;transform:none}
+@media(min-width:860px){
+.grid{grid-template-columns:repeat(4,1fr)}
+.tiles{grid-template-columns:repeat(4,1fr)}
+.tiles.wide{grid-template-columns:repeat(3,1fr)}
+.panel.act{grid-template-columns:1.1fr 1fr}
+#evview.on{grid-template-columns:1.1fr 1fr}
+.team{grid-template-columns:repeat(4,1fr)}
+.swg{grid-template-columns:1fr 1fr}
+.prov{grid-template-columns:1fr 1fr}
+section{padding:90px 4vw 40px}
+}
+</style></head>
+<body>
+<div id="bg"></div><div id="bg2"></div><div id="bgm"></div>
+<div class="blob" style="width:44vw;height:44vw;left:-10vw;top:-8vh;background:#ff4fa0"></div>
+<div class="blob" style="width:38vw;height:38vw;right:-12vw;top:22vh;background:#17d3da;animation-delay:-6s"></div>
+<div class="blob" style="width:40vw;height:40vw;left:8vw;bottom:-14vh;background:#ffc93c;animation-delay:-12s;opacity:.25"></div>
+<div id="prog"></div>
 
-/* v3 image-rich interactions: every card, tile and tab reveals a relevant moving image */
-@keyframes kb{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.18) translate(-2.5%,2.5%)}}
-@media (prefers-reduced-motion:reduce){.icard .th img,.tile img,.evt img,#evview img,.dvc .im img,.panel .pim img{animation:none}}
-.icard{padding:0!important;overflow:hidden;cursor:pointer;text-align:left}
-.icard .th{height:120px;overflow:hidden}
-.icard .th img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 16s ease-in-out infinite alternate;transition:transform .4s}
-.icard:hover .th img{animation-play-state:paused;transform:scale(1.12)}
-.icard .bd{padding:12px 16px 14px}
-.team .icard .bd{text-align:center}
-.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
-.tile{position:relative;height:98px;border-radius:14px;overflow:hidden;border:1px solid rgba(216,178,106,.35);cursor:pointer;transition:.3s;background:#0a1020}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate}
-.tile span{position:absolute;left:0;right:0;bottom:0;padding:16px 10px 7px;font-size:.82rem;line-height:1.25;background:linear-gradient(transparent,rgba(4,8,16,.9));text-shadow:0 1px 4px #000}
-.tile:hover{transform:translateY(-3px);border-color:var(--gold)}
-.tile.act{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
-.ev{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:20px}
-.evt{position:relative;height:132px;border-radius:14px;overflow:hidden;border:1px solid rgba(216,178,106,.35);cursor:pointer;transition:.3s;background:#0a1020}
-.evt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 20s ease-in-out infinite alternate}
-.evt span{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 8px;font-family:Georgia,serif;font-size:.95rem;background:linear-gradient(transparent,rgba(4,8,16,.92));text-shadow:0 1px 4px #000}
-.evt:hover{transform:translateY(-3px);border-color:var(--gold)}
-.evt.act{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
-.evt.act:after{content:'✓';position:absolute;top:8px;right:8px;background:var(--gold);color:#000;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:.8rem;font-weight:700}
-#evview{margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid rgba(216,178,106,.35);display:none}
-#evview.on{display:block;animation:pop .45s}
-#evview .im{height:min(42vw,300px);overflow:hidden}
-#evview img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;animation:kb 20s ease-in-out infinite alternate}
-#evview .cap{padding:10px 16px;background:rgba(10,16,30,.5);backdrop-filter:blur(7px);font-size:.9rem;color:#d6d9e2}
-#evview .cap b{color:var(--gold2)}
-.panel .pim img{animation:kb 18s ease-in-out infinite alternate}
-.panel li{cursor:pointer;transition:.2s;border-radius:8px}
-.panel li:hover{color:var(--gold2);transform:translateX(4px)}
-#dv{position:fixed;inset:0;background:rgba(3,6,12,.9);display:none;align-items:center;justify-content:center;z-index:120;padding:4vw}
-#dv.on{display:flex}
-.dvc{width:min(680px,94vw);max-height:92vh;overflow:auto;background:#0d1322;border:1px solid rgba(216,178,106,.45);border-radius:18px;animation:pop .35s}
-.dvc .im{height:min(46vh,320px);overflow:hidden}
-.dvc .im img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 18s ease-in-out infinite alternate}
-.dvc .tx{padding:18px 22px 22px}
-.dvc .tx h3{color:var(--gold2);font-size:1.5rem;margin-bottom:8px}
-.dvc .tx p,.dvc .tx li{color:#d6d9e2;font-size:.95rem;text-shadow:none}
-.dvc .tx ul{list-style:none;padding:0}.dvc .tx li{padding:5px 0;border-bottom:1px solid var(--line)}.dvc .tx li:before{content:'◆ ';color:var(--gold);font-size:.7rem}
-#dvx{margin-top:16px}
-@media(max-width:800px){.icard .th{height:96px}.tiles{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.tile{height:86px}.ev{grid-template-columns:1fr 1fr}.evt{height:112px}}
-</style></head><body><div id="bgfx" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-<div id="bar"></div>
-<nav><img data-x="k" src="" alt=""><b>KING'S UNITED</b>
-<a href="#who">Who we are</a><a href="#offer">Offer</a><a href="#team">Team</a><a href="#day">Daytime</a><a href="#kids">Kids</a><a href="#night">Evening</a><a href="#events">Events</a><a href="#value">Value</a><a href="#deck">Deck</a><a href="#contact">Contact</a></nav>
+<nav>
+<span class="brand"><img id="navlogo" alt="K">KING'S UNITED</span><span class="sp"></span>
+<a class="lnk" href="#who">The Vibe</a><a class="lnk" href="#day">Daytime</a><a class="lnk" href="#night">Nights</a><a class="lnk" href="#kids">Kids</a><a class="lnk" href="#events">Events</a><a class="lnk" href="#shows">Shows</a><a class="lnk" href="#team">Team</a><a class="lnk cta" href="#contact">Contact</a>
+</nav>
 
-<section id="hero">
-<img class="logo" data-x="logo" src="" alt="King's United Entertainment Company">
-<div class="sub">HOTEL ENTERTAINMENT &amp; GUEST EXPERIENCE</div>
-<h1>Partnership Proposal</h1>
-<div class="sub">2026 / 2027 &nbsp;·&nbsp; RED SEA, EGYPT</div>
-<a class="btn" href="#who">EXPLORE THE PROPOSAL</a>
-<div class="tags"><span>SIGNATURE EXPERIENCES</span><span>ENGAGED GUESTS</span><span>ELEVATED STANDARDS</span></div>
+<header id="top">
+<div id="confetti"></div>
+<img class="logo" id="herologo" alt="King's United Entertainment Company">
+<div class="eyebrow">HOTEL ENTERTAINMENT &amp; GUEST EXPERIENCE · RED SEA, EGYPT</div>
+<h1><span class="grad-text">We Bring</span><br>The <span class="rot" id="rot">Party</span></h1>
+<p class="sub">Daytime energy, spectacular nights, kids club magic and signature weekly events. King's United turns every stay into the holiday your guests talk about long after check-out.</p>
+<div class="cta-row"><a class="btn solid" href="#who">Feel The Vibe ↓</a><a class="btn ghost" href="tel:01156080116">📞 01156080116</a></div>
+<div class="cue">⌄</div>
+</header>
+
+<div class="marq"><div class="track" id="marq"></div></div>
+
+<section id="who" class="reveal">
+<div class="eyebrow">WHO WE ARE</div>
+<h2>Built On One <span class="grad-text">Conviction</span></h2>
+<p class="lead">A guest's most treasured holiday memories are designed, not left to chance. As a dedicated hotel entertainment and animation company for the Red Sea region, we bring genuine energy, imagination and warmth into every hour of a guest's stay. Every activity, show and celebration is shaped around each hotel's identity and the guests who choose it, never a template borrowed from somewhere else.</p>
+<div class="grid" id="whogrid"></div>
 </section>
 
-<section id="who" class="reveal"><div class="eyebrow">Who we are</div><h2>Built On One Conviction</h2>
-<p class="lead">King's United Entertainment exists on a simple conviction: a guest's most treasured holiday memories are designed, not left to chance. As a dedicated hotel entertainment and animation partner for the Red Sea region, we bring genuine energy, imagination and warmth into every hour of a guest's stay. Every activity, show and celebration is shaped around your hotel's identity and the guests who choose to stay with you, never a template borrowed from somewhere else.</p>
-<div class="grid">
-<div class="card icard" data-di="dance"><div class="th"><img data-timg="dance" alt="Dancers performing on stage"></div><div class="bd"><div class="ic">♛</div><h3>Genuine Passion</h3><p>Real enthusiasm in every interaction, never a rehearsed script.</p></div></div>
-<div class="card icard" data-di="fireworks"><div class="th"><img data-timg="fireworks" alt="Fireworks celebration"></div><div class="bd"><div class="ic">☆</div><h3>Signature Experiences</h3><p>Moments guests remember long after check-out.</p></div></div>
-<div class="card icard" data-di="handshake"><div class="th"><img data-timg="handshake" alt="Partnership handshake"></div><div class="bd"><div class="ic">⚭</div><h3>A Trusted Partner</h3><p>Reliable, adaptable, focused on your hotel's success.</p></div></div>
-<div class="card icard" data-di="diverse"><div class="th"><img data-timg="diverse" alt="An international team"></div><div class="bd"><div class="ic">🌐</div><h3>An International Outlook</h3><p>Built to connect with guests from anywhere in the world.</p></div></div></div></section>
+<section id="day" class="reveal">
+<div class="eyebrow">DAYTIME PROGRAM</div>
+<h2>Fun, Energy, <span class="grad-text">Connection</span></h2>
+<p class="lead">A rhythm of daytime activity that keeps guests active, social and smiling, structured around each resort's spaces and schedule. Tap any activity for a closer look.</p>
+<div class="tabs" id="dtabs"></div>
+<div id="dpanels"></div>
+</section>
 
-<section id="offer" class="reveal"><div class="eyebrow">What we offer</div><h2>A Partnership, Not A Package</h2>
-<p class="lead">What changes when entertainment is a partnership.</p>
-<div class="swg"><div class="sw" data-di="staff"><img class="th" data-timg="staff" alt="" loading="lazy"><span class="o">Generic rosters</span><span class="ar">➜</span><span class="n">A multilingual, internationally minded team assembled around your guests' profile</span></div><div class="sw" data-di="calendar"><img class="th" data-timg="calendar" alt="" loading="lazy"><span class="o">Off-the-shelf calendars</span><span class="ar">➜</span><span class="n">Bespoke daytime and evening schedules matched to your hotel's concept</span></div><div class="sw" data-di="meeting"><img class="th" data-timg="meeting" alt="" loading="lazy"><span class="o">Reactive management</span><span class="ar">➜</span><span class="n">Transparent, responsive communication and a genuine partnership model</span></div><div class="sw" data-di="concierge"><img class="th" data-timg="concierge" alt="" loading="lazy"><span class="o">Inconsistent execution</span><span class="ar">➜</span><span class="n">Consistent professional standards across every activity and every shift</span></div><div class="sw" data-di="headset"><img class="th" data-timg="headset" alt="" loading="lazy"><span class="o">Fragmented communication</span><span class="ar">➜</span><span class="n">A single dedicated point of contact for smooth day-to-day coordination</span></div><div class="sw" data-di="happyguests"><img class="th" data-timg="happyguests" alt="" loading="lazy"><span class="o">Base entertainment</span><span class="ar">➜</span><span class="n">Programming engineered to lift guest satisfaction and online review sentiment</span></div></div>
-<div class="grid">
-<div class="card icard" data-di="calendar"><div class="th"><img data-timg="calendar" alt="Planning a bespoke program calendar"></div><div class="bd"><div class="ic">✨</div><h3>Bespoke Programming</h3><p>Every calendar shaped around your concept.</p></div></div>
-<div class="card icard" data-di="stagesil"><div class="th"><img data-timg="stagesil" alt="Stage prepared for a live performance"></div><div class="bd"><div class="ic">🎬</div><h3>Polished Delivery</h3><p>Professional execution guests notice, without seeing the effort.</p></div></div>
-<div class="card icard" data-di="fireworks"><div class="th"><img data-timg="fireworks" alt="Celebration fireworks"></div><div class="bd"><div class="ic">💫</div><h3>Lasting Impressions</h3><p>Moments guests carry home, and return for.</p></div></div>
-<div class="card icard" data-di="handshake"><div class="th"><img data-timg="handshake" alt="Partnership handshake"></div><div class="bd"><div class="ic">🤝</div><h3>Collaborative Partnership</h3><p>Aligned with your goals, season after season.</p></div></div></div></section>
-
-<section id="team" class="reveal"><div class="eyebrow">Our team</div><h2>Built Around Your Guests</h2>
-<p class="lead">Your guests arrive speaking many languages and carrying many expectations. We build every entertainment team with that reality in mind: entertainers, coordinators and hosts capable of making an international guest base feel personally welcomed, not merely accommodated. Team size and language composition are shaped around your hotel's guest profile, season and scale, never a fixed roster applied regardless of who is actually staying with you.</p>
-<div class="team" id="teamcards">
-<div class="card icard" data-di="poolwoman" data-t="Team composition aligned to your leading source markets."><div class="th"><img data-timg="poolwoman" alt="Guests enjoying the resort pool"></div><div class="bd"><div class="ic">🎯</div><h3>Matched To Your Market</h3></div></div>
-<div class="card icard" data-di="travelers" data-t="Entertainers drawn from multiple nationalities and backgrounds."><div class="th"><img data-timg="travelers" alt="Entertainers arriving from around the world"></div><div class="bd"><div class="ic">✈️</div><h3>Recruited Internationally</h3></div></div>
-<div class="card icard" data-di="welcome" data-t="Communication that reads tone and context, not just language."><div class="th"><img data-timg="welcome" alt="A warm welcome at the hotel"></div><div class="bd"><div class="ic">💬</div><h3>Fluent Hospitality</h3></div></div></div>
-<div id="teaminfo">Select a card.</div>
-<h3 style="margin-top:40px;color:var(--gold2)">Scaled To Your Hotel</h3>
-<p class="lead" style="margin-top:6px">Team structure and investment. Pricing is set per hotel, so none is shown here.</p>
-<div class="team">
-<div class="card icard" data-di="stagesetup"><div class="th"><img data-timg="stagesetup" alt="Stage and production planning"></div><div class="bd"><div class="ic">🧭</div><h3>Program Director</h3><p>Team leadership &amp; planning</p></div></div>
-<div class="card icard" data-di="volleyball"><div class="th"><img data-timg="volleyball" alt="Beach volleyball activity"></div><div class="bd"><div class="ic">⚽</div><h3>Activity Coordinator (Local)</h3><p>Sports &amp; daytime activities</p></div></div>
-<div class="card icard" data-di="dj"><div class="th"><img data-timg="dj" alt="DJ and show production"></div><div class="bd"><div class="ic">🎤</div><h3>Entertainment Lead (Local)</h3><p>Music, DJ &amp; show production</p></div></div>
-<div class="card icard" data-di="carnival"><div class="th"><img data-timg="carnival" alt="International animation performers"></div><div class="bd"><div class="ic">🌍</div><h3>International Animation Team</h3><p>Multilingual guest engagement</p></div></div></div>
-<h3 style="margin-top:34px;color:var(--gold2)">Program frequency</h3>
-<div class="tiles" id="freqgrid"></div>
-<p class="lead" style="margin-top:18px">This structure is designed to deliver a professional, energetic and genuinely diverse entertainment offering, scaled to match your hotel's specific needs.</p></section>
-
-<section id="day" class="reveal"><div class="eyebrow">Daytime program</div><h2>Fun, Energy, Connection</h2>
-<p class="lead">A rhythm of daytime activity that keeps guests active, social and smiling, structured around your resort's spaces and schedule.</p>
-<div class="tabs" data-g="d">
-<button class="tab act" data-p="d1">Morning · Awaken &amp; Move</button><button class="tab" data-p="d2">Midday · High Energy Focus</button><button class="tab" data-p="d3">Afternoon · Social &amp; Skill</button></div>
-<div class="panel act" id="d1"><div class="pim"><img data-timg="yoga" alt="Morning stretch on the beach"></div><div><h3>Morning</h3><ul><li data-di="yoga">Morning Mobility &amp; Stretch</li><li data-di="beachfoot">Boccia</li><li data-di="welcome">Daily Program Announcements</li></ul></div></div>
-<div class="panel" id="d2"><div class="pim"><img data-timg="aqua" alt="Aqua aerobics in the pool"></div><div><h3>Midday</h3><ul><li data-di="aqua">Aqua Aerobics</li><li data-di="aqua">Water Polo</li><li data-di="poolwoman">Poolside Games &amp; Pool Party</li><li data-di="volleyball">Beach Volleyball</li></ul></div></div>
-<div class="panel" id="d3"><div class="pim"><img data-timg="beachfoot" alt="Football on the beach"></div><div><h3>Afternoon</h3><ul><li data-di="beachfoot">Football &amp; Mini-Tournaments</li><li data-di="olympic">Table Tennis</li><li data-di="olympic">Darts</li><li data-di="dance">Dance Workshop</li><li data-di="staff">Culinary Workshop</li></ul></div></div></section>
-
-<section id="kids" class="reveal"><div class="eyebrow">Kids program</div><h2>Where Play Meets Discovery</h2>
-<p class="lead">A dedicated program where young guests play, create and make friends, giving parents genuine time to relax.</p>
-<div class="tiles" id="kidlist"></div><div class="panel act" style="margin-top:20px"><div class="pim"><img id="kidimg" data-timg="kidsclub" alt="Kids program"></div><div id="kidinfo"><h3>Pick an activity</h3></div></div></section>
-
-<section id="night" class="reveal"><div class="eyebrow">Evening program</div><h2>Spectacular Nights, By Design</h2>
+<section id="night" class="reveal">
+<div class="eyebrow">EVENING PROGRAM</div>
+<h2>Spectacular Nights, <span class="grad-text">By Design</span></h2>
 <p class="lead">As the sun sets, the program shifts gear: theatrical, high-energy entertainment that gives guests every reason to stay close to home.</p>
-<div class="tabs" data-g="n"><button class="tab act" data-p="n1">High-Energy &amp; Party</button><button class="tab" data-p="n2">Theatrical &amp; Visual Spectacle</button><button class="tab" data-p="n3">Interactive &amp; Hosting</button></div>
-<div class="panel act" id="n1"><div class="pim"><img data-timg="beachnight" alt="Beach party at night"></div><ul><li data-di="kidsdisco">Mini Disco</li><li data-di="beachnight">Beach Party</li><li data-di="foam">Foam Party</li></ul></div>
-<div class="panel" id="n2"><div class="pim"><img data-timg="fire2" alt="Fire show at night"></div><ul><li data-di="stagesil">Light Show</li><li data-di="fire">Fire Show</li><li data-di="acro">Acrobatic Show</li><li data-di="fire2">Fakir Show</li><li data-di="dance">Dance Show</li><li data-di="oriental">Oriental Show</li></ul></div>
-<div class="panel" id="n3"><div class="pim"><img data-timg="karaoke" alt="Hosting and quiz night"></div><ul><li data-di="karaoke">Live Hosting (MC)</li><li data-di="applause">Talent Show</li><li data-di="band">Music Quiz Night</li></ul></div></section>
+<div class="tabs" id="ntabs"></div>
+<div id="npanels"></div>
+</section>
 
-<section id="events" class="reveal"><div class="eyebrow">Signature events</div><h2>The Centerpiece Of Every Week</h2>
-<p class="lead">Beyond the nightly calendar, themed signature events give each week its own unforgettable centerpiece.</p>
-<div class="ev" id="evgrid"></div>
-<div id="evview"><div class="im"><img id="evimg" alt=""></div><div class="cap"><b id="evname"></b><br><span id="evdesc"></span></div></div>
-<div id="evnote">Click an event to pick it for your week.</div>
-<p style="color:var(--mut);font-size:.82rem;margin-top:6px"><i>Styling and décor scaled to fit your hotel's agreement.</i></p></section>
+<section id="events" class="reveal">
+<div class="eyebrow">SIGNATURE EVENTS</div>
+<h2>The Centerpiece Of <span class="grad-text">Every Week</span></h2>
+<p class="lead">Beyond the nightly calendar, themed signature events give each week its own unforgettable centerpiece. Tap the events you love and build your week.</p>
+<div class="tiles wide" id="evgrid"></div>
+<div id="evview"><div class="pim"><img id="evimg" alt=""></div><div class="pinfo"><h3 id="evname"></h3><p id="evdesc"></p><p id="evnote"></p></div></div>
+<p class="hint">Styling and décor scaled to fit each hotel's agreement.</p>
+</section>
 
-<section id="value" class="reveal"><div class="eyebrow">The value we bring</div><h2>Key Benefits &amp; What We Provide</h2>
-<div class="grid"><div class="card icard" data-di="applause"><div class="th"><img data-timg="applause" alt="Guests applauding a show"></div><div class="bd"><h3>Key benefits (the outcomes)</h3><p>• Spectacularly produced themed events and professional daytime programming<br>• Elevated guest satisfaction and stronger online review sentiment<br>• A meaningful contribution to your hotel's reputation and repeat-guest loyalty<br>• Experiences guests remember, and return for</p></div></div>
-<div class="card icard" data-di="costumes"><div class="th"><img data-timg="costumes" alt="Costumes and stage production"></div><div class="bd"><h3>What we provide (the foundation)</h3><p>• Professional uniforms &amp; team presentation<br>• High-quality costumes &amp; performance wardrobe<br>• Structured kids' entertainment programming<br>• Professional face painting &amp; styling<br>• Themed props &amp; accessories<br>• Large-scale special event production<br>• Festival &amp; themed celebration design</p></div></div></div></section>
+<section id="kids" class="reveal">
+<div class="eyebrow">KIDS PROGRAM</div>
+<h2>Where Play Meets <span class="grad-text">Discovery</span></h2>
+<p class="lead">A dedicated program where young guests play, create and make friends, giving parents genuine time to relax.</p>
+<div class="tiles" id="kidlist"></div>
+<div class="panel act" style="display:grid;margin-top:16px" id="kidpanel"><div class="pim"><img id="kidimg" alt=""></div><div class="pinfo" id="kidinfo"><h3>Pick an activity</h3></div></div>
+</section>
 
-<section id="deck" class="reveal"><div class="eyebrow">The original proposal</div><h2>Browse The Deck</h2>
-<p class="lead">Click any slide to enlarge. Use the arrow keys to move through.</p><div class="deck" id="deckgrid"></div></section>
+<section id="shows" class="reveal">
+<div class="eyebrow">WEEKLY SHOW CALENDAR</div>
+<h2>A Different <span class="grad-text">Spectacle</span>, Every Night</h2>
+<p class="lead">A professional, energetic and genuinely diverse show offering, staged across the week and scaled to each hotel's needs. Tap any show for details.</p>
+<div class="tiles wide" id="freqgrid"></div>
+</section>
 
-<section id="contact" class="reveal"><img data-x="k" src="" height="90" alt=""><h2>Thank You</h2>
-<p class="lead" style="margin:auto">For your time and attention. We look forward to the possibility of becoming part of your hotel's team, and helping create the experiences your guests will remember long after they check out.</p>
-<div class="eyebrow" style="margin-top:34px">Get in touch</div><a class="ph" href="tel:01156080116">01156080116</a></section>
-<footer>King's United Entertainment Company · Partnership Proposal 2026/2027 · Red Sea, Egypt</footer>
+<section id="team" class="reveal">
+<div class="eyebrow">OUR TEAM</div>
+<h2>The Crew Behind <span class="grad-text">The Magic</span></h2>
+<p class="lead">Guests arrive speaking many languages and carrying many expectations. We build every entertainment team with that reality in mind: entertainers, coordinators and hosts who make an international guest base feel personally welcomed. Team size and language mix are shaped around each hotel's guest profile, season and scale, never a fixed roster.</p>
+<div class="chips"><span class="chip">🎯 Matched to your market</span><span class="chip">✈️ Recruited internationally</span><span class="chip">💬 Fluent hospitality</span></div>
+<div class="team" id="teamcards"></div>
+</section>
 
-<div id="lb"><img id="lbi" alt=""><div class="c"><button id="pv">‹</button><span id="lbn"></span><button id="nx">›</button><button id="x">Close</button></div></div>
-<div id="dv"><div class="dvc"><div class="im"><img id="dvi" alt=""></div><div class="tx"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx" class="btn" style="animation:none">Close</button></div></div></div>
-<script src="d1.js"></script><script src="d2.js"></script><script src="d3.js"></script><script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script>for(const k in PH)document.documentElement.style.setProperty("--p"+k,"url("+PH[k]+")")</script><!-- Background photos: Pexels (free license), ids 32393942, 12169315, 39591184, 39550243 -->
-<!-- Topic photos: Pexels (free license), ids 20898616,12327994,12571648,33175650,5946219,1613240,33934080,6172482,7693692,6474532,8866819,936018,27795342,41043980,4381848,2305097,5371677,2177813,12169045,9005458,30354454,4306970,8198205,1625355,36313289,29715464,26584359,5928334,27368850,5110016,8535188,37670385,36916877,8384294,7862539,11528240,6668292,8803690,29298514,34185066,18537377,5191740,37987884,6236960,36518565,7723838,7294211,1038180,18238117,20898292,34239110,19390704 -->
+<section id="why" class="reveal">
+<div class="eyebrow">THE KING'S UNITED WAY</div>
+<h2>What Makes Us <span class="grad-text">Different</span></h2>
+<p class="lead">Entertainment as a craft, not a checkbox. Six things every partner hotel can count on, and four promises we keep every single season.</p>
+<div class="swg" id="swgrid"></div>
+<div class="grid" style="margin-top:16px" id="pillargrid"></div>
+</section>
+
+<section id="provide" class="reveal">
+<div class="eyebrow">WHAT HOTELS GET</div>
+<h2>The Outcomes &amp; <span class="grad-text">The Foundation</span></h2>
+<div class="prov">
+<div class="pcard a"><h3>✨ The outcomes</h3><ul>
+<li>Spectacularly produced themed events and professional daytime programming</li>
+<li>Elevated guest satisfaction and stronger online review sentiment</li>
+<li>A meaningful contribution to each hotel's reputation and repeat-guest loyalty</li>
+<li>Experiences guests remember, and return for</li></ul></div>
+<div class="pcard b"><h3>🎭 What we provide</h3><ul>
+<li>Professional uniforms &amp; team presentation</li>
+<li>High-quality costumes &amp; performance wardrobe</li>
+<li>Structured kids' entertainment programming</li>
+<li>Professional face painting &amp; styling</li>
+<li>Themed props &amp; accessories</li>
+<li>Large-scale special event production</li>
+<li>Festival &amp; themed celebration design</li></ul></div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="eyebrow">GET IN TOUCH</div>
+<h2>Let's Make Your Season <span class="grad-text">Unforgettable</span></h2>
+<p class="lead" style="margin:0 auto">One call is all it takes. We would love to hear about your hotel, your guests and the season you're dreaming of.</p>
+<a class="big grad-text" href="tel:01156080116">01156080116</a>
+<p class="note">King's United Entertainment Company · Red Sea, Egypt</p>
+</section>
+
+<footer>King's United Entertainment Company · Hotel Entertainment &amp; Guest Experience · Red Sea, Egypt</footer>
+
+<div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
+<div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
+
+<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script>
 <script>
-const P=n=>IMG[n];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-document.querySelectorAll('[data-x]').forEach(e=>e.src=IMG[e.dataset.x]);document.documentElement.style.setProperty('--hero','url('+IMG[1]+')');{const l=document.createElement('link');l.rel='icon';l.href=IMG.k;document.head.append(l)}
-$$('[data-timg]').forEach(e=>e.src=TIMG[e.dataset.timg]);
-addEventListener('scroll',()=>{$('#bar').style.width=100*scrollY/(document.body.scrollHeight-innerHeight)+'%'});
-(()=>{})()&&0;$$('.reveal').forEach(el=>{new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){el.classList.add('on');o.disconnect()}},{threshold:.05}).observe(el)});
-$$('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;t.querySelectorAll('.tab').forEach(x=>x.classList.toggle('act',x===b));const g=b.dataset.p[0];$$('.panel[id^='+g+']').forEach(p=>p.classList.toggle('act',p.id===b.dataset.p))}));
-/* detail modal: clicking any program, role or activity reveals a relevant moving image plus details */
+const phk=Object.keys(PH);
+/* moving background crossfade */
+let bgi=0;const bg1=$('#bg'),bg2=$('#bg2');let flip=false;
+bg1.style.backgroundImage='url('+PH[phk[0]]+')';bg2.style.backgroundImage='url('+PH[phk[1]]+')';
+setInterval(()=>{bgi=(bgi+1)%phk.length;const nxt=PH[phk[bgi]];
+if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.opacity=0}else{bg2.style.backgroundImage='url('+nxt+')';bg2.style.opacity=1;bg1.style.opacity=0}
+flip=!flip},9000);
+bg1.style.transition=bg2.style.transition='opacity 2.4s';
+/* logos */
+$('#navlogo').src=IMG.k;$('#herologo').src=IMG.logo;
+{const l=document.createElement('link');l.rel='icon';l.href=IMG.k;document.head.append(l)}
+/* confetti */
+{const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
+for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
+/* rotating word */
+{const words=['Party','Dancing','Pool Party','Fire Show','Kids Club','Beach Games','Colour Fest','Live Music'];let wi=0;const r=$('#rot');
+setInterval(()=>{r.classList.add('out');setTimeout(()=>{wi=(wi+1)%words.length;r.textContent=words[wi];r.classList.remove('out')},300)},2400)}
+/* marquee */
+{const items=['Foam Party','Carnival Night','Fire Show','Mini Disco','Colour Party','Beach Volleyball','Aqua Aerobics','Live Singer','Aloha Party','White Party','Kids Disco','Acrobatic Show','Pink Party','Arabian Nights'];
+$('#marq').innerHTML=(items.map(i=>'<span>✦ '+i+'</span>').join('')).repeat(2)}
+/* scroll progress */
+addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+/* detail modal + lightbox */
 function detail(img,title,html){$('#dvi').src=TIMG[img]||img;$('#dvt').textContent=title;$('#dvd').innerHTML=html;$('#dv').classList.add('on')}
-$('#dvx').onclick=()=>$('#dv').classList.remove('on');$('#dv').addEventListener('click',e=>{if(e.target.id==='dv')$('#dv').classList.remove('on')});
-$$('.icard[data-di]').filter(c=>!c.closest('#teamcards')).forEach(c=>c.addEventListener('click',()=>{const h=c.querySelector('h3'),p=c.querySelector('p');detail(c.dataset.di,h?h.textContent:'',p?'<p>'+p.innerHTML+'</p>':'')}));
-$$('.sw[data-di]').forEach(s=>s.addEventListener('click',()=>{const o=s.querySelector('.o').textContent,n=s.querySelector('.n').textContent;detail(s.dataset.di,'A Partnership, Not A Package','<p><s style="color:#aab">'+o+'</s></p><p style="margin-top:8px">◆ '+n+'</p>')}));
-$$('.panel li[data-di]').forEach(li=>li.addEventListener('click',()=>{const h=li.closest('.panel').querySelector('h3');detail(li.dataset.di,li.textContent,'<p>'+(h?h.textContent+' program':'')+' · tap the image to zoom</p>')}));
-$$('#teamcards .card').forEach(c=>c.onclick=e=>{$$('#teamcards .card').forEach(x=>x.classList.toggle('act',x===c));$('#teaminfo').textContent=c.dataset.t;if(e.isTrusted)detail(c.dataset.di,c.querySelector('h3').textContent,'<p>'+c.dataset.t+'</p>')});
+$('#dvx').onclick=()=>$('#dv').classList.remove('on');
+$('#dv').addEventListener('click',e=>{if(e.target.id==='dv')$('#dv').classList.remove('on')});
+function zoom(src,cap){$('#lbi').src=src;$('#lbn').textContent=cap||'';$('#lb').classList.add('on')}
+$('#x').onclick=()=>$('#lb').classList.remove('on');
+$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')$('#lb').classList.remove('on')});
+addEventListener('keydown',e=>{if(e.key==='Escape'){$('#dv').classList.remove('on');$('#lb').classList.remove('on')}});
+$('#dvi').onclick=()=>zoom($('#dvi').src,$('#dvt').textContent);
+$('#evimg').onclick=()=>zoom($('#evimg').src,$('#evname').textContent);
+$('#kidimg').onclick=()=>zoom($('#kidimg').src,'Kids program');
+/* who cards */
+const who=[["Genuine Passion","dance","Real enthusiasm in every interaction, never a rehearsed script."],["Signature Experiences","fireworks","Moments guests remember long after check-out."],["A Trusted Partner","handshake","Reliable, adaptable, focused on each hotel's success."],["An International Outlook","diverse","Built to connect with guests from anywhere in the world."]];
+who.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[1]];im.alt=w[0];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[1],w[0],'<p>'+w[2]+'</p>');$('#whogrid').append(c)});
+/* daytime */
+const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yoga"],["Boccia","volleyball"],["Daily Program Announcements","welcome"]]],
+["Midday · High Energy Focus","aqua",[["Aqua Aerobics","aqua"],["Water Polo","poolwoman"],["Poolside Games & Pool Party","foam"],["Beach Volleyball","volleyball"]]],
+["Afternoon · Social & Skill","beachfoot",[["Football & Mini-Tournaments","beachfoot"],["Table Tennis","olympic"],["Darts","happyguests"],["Dance Workshop","dance"],["Culinary Workshop","resort"]]]];
+const dtab=$('#dtabs'),dpan=$('#dpanels');
+day.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#dtabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#dpanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};dtab.append(b);
+const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
+pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3><ul></ul></div>';
+pn.querySelector('img').src=TIMG[d[1]];
+const ul=pn.querySelector('ul');
+d[2].forEach(a=>{const li=document.createElement('li');li.textContent=a[0];li.onclick=()=>detail(a[1],a[0],'<p>'+d[0]+' program · tap the image to zoom</p>');ul.append(li)});
+pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
+dpan.append(pn)});
+/* evening */
+const night=[["High-Energy & Party","foam",[["Mini Disco","kidsdisco"],["Beach Party","beachnight"],["Foam Party","foam"]]],
+["Theatrical & Visual Spectacle","fire",[["Light Show","fire2"],["Fire Show","fire"],["Acrobatic Show","acro"],["Fakir Show","oriental"],["Dance Show","dance"],["Oriental Show","oriental"]]],
+["Interactive & Hosting","karaoke",[["Live Hosting (MC)","karaoke"],["Talent Show","applause"],["Music Quiz Night","singer"]]]];
+const ntab=$('#ntabs'),npan=$('#npanels');
+night.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#ntabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#npanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};ntab.append(b);
+const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
+pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3><ul></ul></div>';
+pn.querySelector('img').src=TIMG[d[1]];
+const ul=pn.querySelector('ul');
+d[2].forEach(a=>{const li=document.createElement('li');li.textContent=a[0];li.onclick=()=>detail(a[1],a[0],'<p>Evening program · tap the image to zoom</p>');ul.append(li)});
+pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
+npan.append(pn)});
+/* events */
+const evs=[["Carnival Night","carnival","Costumes, parade energy and street performers."],["Foam Party","foam","Foam cannons, DJ and non-stop dancing."],["Colour Party","holi","A powder-colour celebration at sunset."],["Olympic Day","olympic","Guests compete in fun team games all day."],["Inflatable Fun Day","inflatable","Giant inflatables on the beach and lawn."],["White Party","whiteparty","All-white dress code, an elegant night under the lights."],["African Night","african","Drums, dance and African rhythms."],["Boho Night","boho","Bohemian styling, lanterns and laid-back music."],["Pharaonic Night","pharaonic","Ancient-Egypt themed show, costume and décor."],["Pink Party","pink","Pink dress code, neon lights and feel-good pop."],["Aloha Party","aloha","A Hawaiian luau with leis and island beats."],["Arabian Nights","arabian","Lanterns, oriental music and Arabian atmosphere."]];
+let sel=new Set;
+evs.forEach(n=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[n[1]];im.alt=n[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=n[0];d.append(im,sp);d.onclick=()=>{sel.has(n[0])?sel.delete(n[0]):sel.add(n[0]);d.classList.toggle('act');$('#evimg').src=TIMG[n[1]];$('#evimg').alt=n[0];$('#evname').textContent=n[0];$('#evdesc').textContent=n[2];$('#evview').classList.add('on');$('#evnote').textContent=sel.size?'Your week: '+[...sel].join(' · '):'Tap an event to pick it for your week.'};$('#evgrid').append(d)});
+/* kids */
 const kids=[["Mini Club & Kids Circle","kidsclub"],["Arts & Crafts / Face Painting","facepaint"],["Treasure Hunts","treasure"],["Games & Friendly Competitions","kidsgames"],["Sports & Beach Activities","kidsbeach"],["Kids Shows & Mini Disco","kidsdisco"],["Evening Kids Program","kidsmovie"]];
 const kd=[["Engaging by Design","Activities built for a range of ages."],["Play with Purpose","Creative, confidence-building activities."],["New Friendships","Shared games, shared holiday memories."],["A Dedicated Team","Attentive, carefully trained hosts."]];
-kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3><ul>'+kd.map(a=>'<li><b>'+a[0]+'</b><br><span style="color:var(--mut)">'+a[1]+'</span></li>').join('')+'</ul>'};$('#kidlist').append(p)});
+kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3><ul>'+kd.map(a=>'<li style="cursor:default"><b>'+a[0]+'</b><br><span style="color:var(--mut)">'+a[1]+'</span></li>').join('')+'</ul>'};$('#kidlist').append(p)});
+/* shows */
 const freq=[["Dance Show","dance","A choreographed production show with full costumes, staged weekly."],["Street Party","streetparty","An open-air street-style celebration that pulls the whole resort in."],["Foam Party","foam","Foam cannons, a DJ and non-stop dancing by the pool or beach."],["Live Singer","singer","A professional vocalist performing international favourites live."],["Duo Band","band","A live duo covering sunset, dinner and easy-listening sets."],["Fire or Light Show","fire","A choreographed fire and light spectacle after dark."],["Acrobatic Show","acro","Aerial and ground acrobatics by professional performers."],["Oriental Show","oriental","Classic oriental dance with authentic music and costume."]];
-freq.forEach(f=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[f[1]];im.alt=f[0];const sp=document.createElement('span');sp.textContent=f[0];d.append(im,sp);d.onclick=()=>detail(f[1],f[0],'<p>'+f[2]+'</p>');$('#freqgrid').append(d)});
-const evs=[["Carnival Night","carnival","Costumes, parade energy and street performers."],["Foam Party","foam","Foam cannons, DJ and non-stop dancing."],["Colour Party","holi","A powder-colour celebration at sunset."],["Olympic Day","olympic","Guests compete in fun team games all day."],["Inflatable Fun Day","inflatable","Giant inflatables on the beach and lawn."],["White Party","whiteparty","All-white dress code, an elegant night under the lights."],["African Night","african","Drums, dance and African rhythms."],["Boho Night","boho","Bohemian styling, lanterns and laid-back music."],["Pharaonic Night","pharaonic","Ancient-Egypt themed show, costume and décor."],["Pink Party","pink","Pink dress code, neon lights and feel-good pop."],["Aloha Party","aloha","A Hawaiian luau with leis and island beats."],["Arabian Nights","arabian","Lanterns, oriental music and Arabian atmosphere."]];let sel=new Set;
-evs.forEach(n=>{const d=document.createElement('div');d.className='evt';const im=new Image;im.src=TIMG[n[1]];im.alt=n[0];const sp=document.createElement('span');sp.textContent=n[0];d.append(im,sp);d.onclick=()=>{sel.has(n[0])?sel.delete(n[0]):sel.add(n[0]);d.classList.toggle('act');$('#evimg').src=TIMG[n[1]];$('#evimg').alt=n[0];$('#evname').textContent=n[0];$('#evdesc').textContent=n[2];$('#evview').classList.add('on');$('#evnote').textContent=sel.size?'Your week: '+[...sel].join(' · '):'Click an event to pick it for your week.'};$('#evgrid').append(d)});
-const names=["Cover","Who we are","What we offer","Our team","Daytime program","Kids program","Evening program","Signature events","Key benefits","Scaled to your hotel","Thank you"];let cur=0;
-function show(i){cur=(i+11)%11;$('#lbi').src=P(cur+1);$('#lbn').textContent=(cur+1)+' / 11 · '+names[cur];$('#lb').classList.add('on')}
-function zoom(src,label){cur=-1;$('#lbi').src=src;$('#lbn').textContent=label;$('#lb').classList.add('on')}
-for(let i=0;i<11;i++){const im=new Image;im.src=P(i+1);im.alt=names[i];im.loading='lazy';im.onclick=()=>show(i);$('#deckgrid').append(im)}
-$$('.panel .pim img').forEach(i=>{i.onclick=()=>zoom(i.src,i.alt)});
-$('#evimg').onclick=()=>zoom($('#evimg').src,$('#evname').textContent);
-$('#dvi').onclick=()=>zoom($('#dvi').src,$('#dvt').textContent);
-$('#pv').onclick=()=>{if(cur>=0)show(cur-1)};$('#nx').onclick=()=>{if(cur>=0)show(cur+1)};$('#x').onclick=()=>$('#lb').classList.remove('on');
-addEventListener('keydown',e=>{if($('#dv').classList.contains('on')&&e.key=='Escape'){$('#dv').classList.remove('on');return}if(!$('#lb').classList.contains('on'))return;if(e.key=='ArrowRight'&&cur>=0)show(cur+1);if(e.key=='ArrowLeft'&&cur>=0)show(cur-1);if(e.key=='Escape')$('#lb').classList.remove('on')});
-
-$$('.reveal').forEach(sec=>sec.querySelectorAll('.grid>*,.swg>*,.team>*,.items>*,.tiles>*,.ev>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
-{const dk=$('#deckgrid'),b=document.createElement('div');b.className='dk';b.innerHTML='<button aria-label="Previous">‹</button><button aria-label="Next">›</button>';dk.after(b);const [a,c]=b.children;a.onclick=()=>dk.scrollBy({left:-480,behavior:'smooth'});c.onclick=()=>dk.scrollBy({left:480,behavior:'smooth'})}
-{const tc=$$('#teamcards .card');let u=0,i=0;tc[0].click();tc.forEach(c=>c.addEventListener('click',e=>{if(e.isTrusted)u=1}));setInterval(()=>{if(!u){i=(i+1)%tc.length;tc[i].click()}},4500)}
+freq.forEach(f=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[f[1]];im.alt=f[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=f[0];d.append(im,sp);d.onclick=()=>detail(f[1],f[0],'<p>'+f[2]+'</p>');$('#freqgrid').append(d)});
+/* team */
+const team=[["🧭","Program Director","Team leadership & planning","staff"],["⚽","Activity Coordinator (Local)","Sports & daytime activities","volleyball"],["🎤","Entertainment Lead (Local)","Music, DJ & show production","dj"],["🌍","International Animation Team","Multilingual guest engagement","diverse"]];
+team.forEach(t=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[t[3]];im.alt=t[1];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+t[0]+' '+t[1]+'</h3><p>'+t[2]+'</p>';c.append(im,p);c.onclick=()=>detail(t[3],t[1],'<p>'+t[2]+'.</p>');$('#teamcards').append(c)});
+/* the KU way: promises */
+const sw=[["The Team","staff","A multilingual, internationally minded team assembled around your guests' profile"],["The Calendar","calendar","Bespoke daytime and evening schedules matched to your hotel's concept"],["The Partnership","meeting","Transparent, responsive communication and a genuine partnership model"],["The Standard","concierge","Consistent professional standards across every activity and every shift"],["The Contact","headset","A single dedicated point of contact for smooth day-to-day coordination"],["The Result","happyguests","Programming engineered to lift guest satisfaction and online review sentiment"]];
+sw.forEach(s=>{const d=document.createElement('div');d.className='sw';const im=new Image;im.className='th';im.src=TIMG[s[1]];im.alt=s[0];im.loading='lazy';const k=document.createElement('span');k.className='k';k.textContent=s[0];const a=document.createElement('span');a.className='ar';a.textContent='➜';const n=document.createElement('span');n.className='n';n.textContent=s[2];d.append(im,k,a,n);d.onclick=()=>detail(s[1],s[0],'<p>'+s[2]+'.</p>');$('#swgrid').append(d)});
+/* pillars */
+const pil=[["✨","Bespoke Programming","Every calendar shaped around your concept.","calendar"],["🎬","Polished Delivery","Professional execution guests notice, without seeing the effort.","stagesetup"],["💫","Lasting Impressions","Moments guests carry home, and return for.","applause"],["🤝","Collaborative Partnership","Aligned with your goals, season after season.","handshake"]];
+pil.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[3]];im.alt=w[1];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+' '+w[1]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[3],w[1],'<p>'+w[2]+'</p>');$('#pillargrid').append(c)});
+/* reveal on scroll */
+$$('.reveal').forEach(sec=>sec.querySelectorAll('.grid>*,.swg>*,.team>*,.tiles>*,.prov>*,.chips>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach(s=>io.observe(s));
 </script></body></html>
