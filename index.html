@@ -187,7 +187,9 @@ footer{padding:26px 5vw 40px;text-align:center;color:var(--mut);font-size:.8rem;
 .car::-webkit-scrollbar{display:none}
 .car>*{flex:0 0 min(68vw,290px);scroll-snap-align:center;will-change:transform;transition:border-color .3s,box-shadow .3s}
 .car>.sw{flex-basis:min(82vw,350px)}
-.car .tile,.car .card{border-radius:30px 40px 28px 42px;transform-style:preserve-3d}
+.car .tile,.car .card{border-radius:30px 40px 28px 42px}
+@media (pointer:fine){.car .tile,.car .card{transform-style:preserve-3d}}
+@media (pointer:coarse){.car>*{backface-visibility:hidden;-webkit-backface-visibility:hidden}}
 .car .tile{aspect-ratio:3/4}
 .car .card img{height:190px}
 .carbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(7,19,31,.65);color:var(--sun);font-size:1.15rem;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center;transition:.25s}
@@ -338,7 +340,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js?v=6d"></script><script src="d5.js?v=6d"></script><script src="d6.js?v=6d"></script><script src="d7.js?v=6d"></script><script src="d8.js?v=6d"></script><script src="d9.js?v=6d"></script><script src="d10.js?v=6d"></script><script src="d11.js?v=6d"></script><script src="d12.js?v=6d"></script><script src="d14.js?v=6d"></script>
+<script src="d4.js?v=6e"></script><script src="d5.js?v=6e"></script><script src="d6.js?v=6e"></script><script src="d7.js?v=6e"></script><script src="d8.js?v=6e"></script><script src="d9.js?v=6e"></script><script src="d10.js?v=6e"></script><script src="d11.js?v=6e"></script><script src="d12.js?v=6e"></script><script src="d14.js?v=6e"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -350,8 +352,8 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src='img/logo-mark.webp?v=6d';$('#herologo').src='img/logo-full.webp?v=6d';
-{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6d';document.head.append(l)}
+$('#navlogo').src='img/logo-mark.webp?v=6e';$('#herologo').src='img/logo-full.webp?v=6e';
+{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6e';document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
@@ -431,6 +433,7 @@ season.forEach(n=>{const d=document.createElement('div');d.className='tile';cons
 const kids=[["Mini Club & Kids Circle","kidsclub"],["Arts & Crafts / Face Painting","facepaint"],["Treasure Hunts","treasure"],["Games & Friendly Competitions","kidsgames"],["Sports & Beach Activities","kidsbeach"],["Kids Shows & Mini Disco","kidsdisco"],["Evening Kids Program","kidsmovie"]];
 const kd=[["Engaging by Design","Activities built for a range of ages."],["Play with Purpose","Creative, confidence-building activities."],["New Friendships","Shared games, shared holiday memories."],["A Dedicated Team","Attentive, carefully trained hosts."]];
 kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3>';flow($('#kidinfo'),kd.map(a=>['<b>'+a[0]+'</b>&nbsp;·&nbsp;'+a[1]]),true)};$('#kidlist').append(p)});
+{const t0=document.querySelector('#kidlist .tile');if(t0)t0.click()}
 /* shows */
 const freq=[["Dance Show","dance","A choreographed production show with full costumes, staged weekly."],["Street Party","streetparty","An open-air street-style celebration that pulls the whole resort in."],["Foam Party","foam","Foam cannons, a DJ and non-stop dancing by the pool or beach."],["Live Singer","singer","A professional vocalist performing international favourites live."],["Duo Band","band","A live duo covering sunset, dinner and easy-listening sets."],["Fire or Light Show","fire","A choreographed fire and light spectacle after dark."],["Acrobatic Show","acro","Aerial and ground acrobatics by professional performers."],["Oriental Show","oriental","Classic oriental dance with authentic music and costume."]];
 freq.forEach(f=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[f[1]];im.alt=f[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=f[0];d.append(im,sp);d.onclick=()=>detail(f[1],f[0],'<p>'+f[2]+'</p>');$('#freqgrid').append(d)});
@@ -445,9 +448,11 @@ const pil=[["✨","Bespoke Programming","Every calendar shaped around your conce
 pil.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[3]];im.alt=w[1];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+' '+w[1]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[3],w[1],'<p>'+w[2]+'</p>');$('#pillargrid').append(c)});
 /* 3D carousels */
 function carfy(car){
+const coarse=matchMedia('(pointer:coarse)').matches;
 const upd=()=>{const cr=car.getBoundingClientRect(),cc=cr.left+cr.width/2;
 [...car.children].forEach(it=>{const r=it.getBoundingClientRect(),d=((r.left+r.width/2)-cc)/cr.width;
-it.style.transform='rotateY('+(-d*30)+'deg) translateZ('+(-Math.abs(d)*180)+'px) scale('+(1-Math.min(Math.abs(d)*.14,.28))+')';
+if(coarse){it.style.transform='scale('+(1-Math.min(Math.abs(d)*.08,.16))+')'}else{
+it.style.transform='rotateY('+(-d*30)+'deg) translateZ('+(-Math.abs(d)*180)+'px) scale('+(1-Math.min(Math.abs(d)*.14,.28))+')')}
 it.style.opacity=1-Math.min(Math.abs(d)*.4,.55);
 const img=it.querySelector('img');if(img)img.style.objectPosition=(50+d*36)+'% 50%'})};
 car.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
