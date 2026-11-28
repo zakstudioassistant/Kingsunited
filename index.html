@@ -106,6 +106,17 @@ h2{font-size:clamp(1.9rem,6.4vw,3.1rem);margin:10px 0 8px;line-height:1.08}
 .panel li{padding:10px 14px;margin-bottom:8px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.9rem;cursor:pointer;transition:.25s}
 .panel li:hover{background:rgba(255,201,60,.12);border-color:var(--sun);transform:translateX(4px)}
 .panel li b{color:var(--sun)}
+/* auto-flow moving lines */
+.flow{overflow:hidden;margin-top:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.fltrack{display:flex;gap:10px;width:max-content;padding:6px 0;animation:flmove var(--flspd,24s) linear infinite}
+.fltrack.rev{animation-direction:reverse}
+.flow:hover .fltrack,.flow:active .fltrack{animation-play-state:paused}
+@keyframes flmove{to{transform:translateX(calc(-50% - 5px))}}
+.fl{display:flex;align-items:center;gap:10px;padding:6px 16px 6px 6px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:.85rem;font-weight:600;cursor:pointer;transition:.25s;white-space:nowrap;color:var(--ink)}
+.fl:hover{border-color:var(--sun);background:rgba(255,201,60,.14)}
+.fl img{width:40px;height:40px;border-radius:50%;object-fit:cover;pointer-events:none}
+.fl.txt{padding:10px 18px;cursor:default;font-weight:500}
+.fl.txt b{color:var(--sun)}
 /* event preview */
 #evview{display:none;margin-top:22px;border-radius:22px;overflow:hidden;background:rgba(10,26,42,.6);border:1px solid rgba(255,201,60,.35);backdrop-filter:blur(8px)}
 #evview.on{display:grid;grid-template-columns:1fr;animation:pop .5s}
@@ -319,7 +330,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script><script src="d14.js"></script>
+<script src="d4.js?v=6b"></script><script src="d5.js?v=6b"></script><script src="d6.js?v=6b"></script><script src="d7.js?v=6b"></script><script src="d8.js?v=6b"></script><script src="d9.js?v=6b"></script><script src="d10.js?v=6b"></script><script src="d11.js?v=6b"></script><script src="d12.js?v=6b"></script><script src="d14.js?v=6b"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -331,8 +342,8 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src='img/logo-mark.webp';$('#herologo').src='img/logo-full.webp';
-{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp';document.head.append(l)}
+$('#navlogo').src='img/logo-mark.webp?v=6b';$('#herologo').src='img/logo-full.webp?v=6b';
+{const l=document.createElement('link');l.rel='icon';l.href='img/logo-mark.webp?v=6b';document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
@@ -361,6 +372,16 @@ $('#kidimg').onclick=()=>zoom($('#kidimg').src,'Kids program');
 /* who cards */
 const who=[["Genuine Passion","dance","Real enthusiasm in every interaction, never a rehearsed script."],["Signature Experiences","fireworks","Moments guests remember long after check-out."],["A Trusted Partner","handshake","Reliable, adaptable, focused on each hotel's success."],["An International Outlook","diverse","Built to connect with guests from anywhere in the world."]];
 who.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[1]];im.alt=w[0];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[1],w[0],'<p>'+w[2]+'</p>');$('#whogrid').append(c)});
+/* auto-flow moving lines */
+function flow(host,items,txt,rev){
+const f=document.createElement('div');f.className='flow';
+const t=document.createElement('div');t.className='fltrack'+(rev?' rev':'');
+t.style.setProperty('--flspd',(Math.max(items.length,3)*5+8)+'s');
+for(let r=0;r<2;r++)items.forEach(a=>{const p=document.createElement('div');p.className='fl'+(txt?' txt':'');
+if(!txt){const im=new Image;im.src=TIMG[a[1]];im.alt=a[0];im.loading='lazy';p.append(im)}
+const s=document.createElement('span');s.innerHTML=a[0];p.append(s);
+if(a[2])p.onclick=a[2];t.append(p)});
+f.append(t);host.append(f)}
 /* daytime */
 const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yoga"],["Boccia","boccia"],["Daily Program Announcements","welcome"]]],
 ["Midday · High Energy Focus","aqua",[["Aqua Aerobics","aqua"],["Water Polo","poolwoman"],["Poolside Games & Pool Party","poolparty"],["Beach Volleyball","volleyball"]]],
@@ -368,10 +389,12 @@ const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yo
 const dtab=$('#dtabs'),dpan=$('#dpanels');
 day.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#dtabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#dpanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};dtab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
-pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3><ul></ul></div>';
+pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3></div>';
 pn.querySelector('img').src=TIMG[d[1]];
-const ul=pn.querySelector('ul');
-d[2].forEach(a=>{const li=document.createElement('li');li.textContent=a[0];li.onclick=()=>detail(a[1],a[0],'<p>'+d[0]+' program · tap the image to zoom</p>');ul.append(li)});
+const its=d[2].map(a=>[a[0],a[1],()=>detail(a[1],a[0],'<p>'+d[0]+' program · tap the image to zoom</p>')]);
+const pi=pn.querySelector('.pinfo');
+flow(pi,its.filter((_,i)=>!(i%2)));
+if(its.length>2)flow(pi,its.filter((_,i)=>i%2),false,true);
 pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
 dpan.append(pn)});
 /* evening */
@@ -381,10 +404,12 @@ const night=[["High-Energy & Party","foam",[["Mini Disco","kidsdisco"],["Beach P
 const ntab=$('#ntabs'),npan=$('#npanels');
 night.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#ntabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#npanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};ntab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
-pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3><ul></ul></div>';
+pn.innerHTML='<div class="pim"><img loading="lazy" alt="'+d[0]+'"></div><div class="pinfo"><h3>'+d[0]+'</h3></div>';
 pn.querySelector('img').src=TIMG[d[1]];
-const ul=pn.querySelector('ul');
-d[2].forEach(a=>{const li=document.createElement('li');li.textContent=a[0];li.onclick=()=>detail(a[1],a[0],'<p>Evening program · tap the image to zoom</p>');ul.append(li)});
+const its=d[2].map(a=>[a[0],a[1],()=>detail(a[1],a[0],'<p>Evening program · tap the image to zoom</p>')]);
+const pi=pn.querySelector('.pinfo');
+flow(pi,its.filter((_,i)=>!(i%2)));
+if(its.length>2)flow(pi,its.filter((_,i)=>i%2),false,true);
 pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
 npan.append(pn)});
 /* events */
@@ -396,7 +421,7 @@ season.forEach(n=>{const d=document.createElement('div');d.className='tile';cons
 /* kids */
 const kids=[["Mini Club & Kids Circle","kidsclub"],["Arts & Crafts / Face Painting","facepaint"],["Treasure Hunts","treasure"],["Games & Friendly Competitions","kidsgames"],["Sports & Beach Activities","kidsbeach"],["Kids Shows & Mini Disco","kidsdisco"],["Evening Kids Program","kidsmovie"]];
 const kd=[["Engaging by Design","Activities built for a range of ages."],["Play with Purpose","Creative, confidence-building activities."],["New Friendships","Shared games, shared holiday memories."],["A Dedicated Team","Attentive, carefully trained hosts."]];
-kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3><ul>'+kd.map(a=>'<li style="cursor:default"><b>'+a[0]+'</b><br><span style="color:var(--mut)">'+a[1]+'</span></li>').join('')+'</ul>'};$('#kidlist').append(p)});
+kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3>';flow($('#kidinfo'),kd.map(a=>['<b>'+a[0]+'</b>&nbsp;·&nbsp;'+a[1]]),true)};$('#kidlist').append(p)});
 /* shows */
 const freq=[["Dance Show","dance","A choreographed production show with full costumes, staged weekly."],["Street Party","streetparty","An open-air street-style celebration that pulls the whole resort in."],["Foam Party","foam","Foam cannons, a DJ and non-stop dancing by the pool or beach."],["Live Singer","singer","A professional vocalist performing international favourites live."],["Duo Band","band","A live duo covering sunset, dinner and easy-listening sets."],["Fire or Light Show","fire","A choreographed fire and light spectacle after dark."],["Acrobatic Show","acro","Aerial and ground acrobatics by professional performers."],["Oriental Show","oriental","Classic oriental dance with authentic music and costume."]];
 freq.forEach(f=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[f[1]];im.alt=f[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=f[0];d.append(im,sp);d.onclick=()=>detail(f[1],f[0],'<p>'+f[2]+'</p>');$('#freqgrid').append(d)});
@@ -422,6 +447,13 @@ const first=car.children[0];
 if(first)car.scrollLeft=first.offsetLeft-(car.clientWidth-first.clientWidth)/2;
 upd()}
 $$('.car').forEach(carfy);
+/* auto-advance carousels */
+$$('.car').forEach(car=>{let manual=0;
+car.addEventListener('pointerdown',()=>manual=Date.now(),{passive:true});
+car.addEventListener('wheel',()=>manual=Date.now(),{passive:true});
+setInterval(()=>{if(Date.now()-manual<7000)return;const r=car.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+const it=car.children[0];const step=it?it.offsetWidth+18:300;
+if(car.scrollLeft+car.clientWidth>=car.scrollWidth-12)car.scrollTo({left:0,behavior:'smooth'});else car.scrollBy({left:step,behavior:'smooth'})},4200)});
 $$('.carbtn').forEach(b=>b.onclick=()=>{const car=document.getElementById(b.dataset.car);const it=car.children[0];const step=it?it.offsetWidth+18:300;car.scrollBy({left:(b.classList.contains('r')?1:-1)*step,behavior:'smooth'})});
 /* reveal on scroll */
 $$('.reveal').forEach(sec=>sec.querySelectorAll('.car,.prov>*,.chips>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
