@@ -18,11 +18,15 @@ img{display:block}
 /* moving sea background */
 #bg{position:fixed;inset:-4%;z-index:-2;background-size:cover;background-position:center;animation:kenburns 26s ease-in-out infinite alternate;transition:opacity 1.2s}
 #bg2{position:fixed;inset:-4%;z-index:-2;background-size:cover;background-position:center;opacity:0;animation:kenburns 26s ease-in-out infinite alternate-reverse}
-#bgm{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,19,31,.72),rgba(7,19,31,.55) 40%,rgba(7,19,31,.82));pointer-events:none}
+#bgm{position:fixed;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,19,31,.84),rgba(7,19,31,.72) 40%,rgba(7,19,31,.9));pointer-events:none}
 @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-1.5%,1.5%)}}
 /* floating colour blobs */
 .blob{position:fixed;border-radius:50%;filter:blur(90px);opacity:.35;z-index:-1;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
 @keyframes drift{from{transform:translate(0,0) scale(1)}50%{transform:translate(4vw,-6vh) scale(1.15)}to{transform:translate(-4vw,5vh) scale(.95)}}
+#led{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#led i{position:absolute;border-radius:50%;opacity:.22;animation:twk ease-in-out infinite alternate}
+@keyframes twk{from{opacity:.06;transform:translateY(0) scale(.8)}to{opacity:.45;transform:translateY(-34px) scale(1.15)}}
+.grad-text{filter:drop-shadow(0 0 22px rgba(255,79,160,.22))}
 /* scroll progress */
 #prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--grad);z-index:99;border-radius:0 4px 4px 0}
 /* nav */
@@ -205,7 +209,7 @@ section{padding:90px 4vw 40px}
 <img class="logo" id="herologo" alt="King's United Entertainment Company">
 <div class="eyebrow">HOTEL ENTERTAINMENT &amp; GUEST EXPERIENCE · RED SEA, EGYPT</div>
 <h1><span class="grad-text">We Bring</span><br>The <span class="rot" id="rot">Party</span></h1>
-<p class="sub">Daytime energy, spectacular nights, kids club magic and signature weekly events. King's United turns every stay into the holiday your guests talk about long after check-out.</p>
+<p class="sub">Curated daytime experiences, spectacular nights, kids club magic and signature weekly events. King's United turns every stay into the holiday your guests talk about long after check-out.</p>
 <div class="cta-row"><a class="btn solid" href="#who">Feel The Vibe ↓</a><a class="btn ghost" href="tel:+201156080116">📞 +201156080116</a></div>
 <div class="cue">⌄</div>
 </header>
@@ -315,7 +319,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script><script src="d13.js"></script>
+<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script><script src="d13.js"></script><script src="d14.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -332,12 +336,19 @@ $('#navlogo').src=IMG.mark;$('#herologo').src=IMG.mark;
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
 for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.random()*100+'%';d.style.background=cols[i%cols.length];d.style.animationDuration=(7+Math.random()*9)+'s';d.style.animationDelay=(-Math.random()*12)+'s';d.style.width=d.style.height=(5+Math.random()*8)+'px';if(i%3)d.style.borderRadius='50%';cf.append(d)}}
+{const led=document.createElement('div');led.id='led';document.body.prepend(led);
+const lc=['#17d3da','#ff4fa0','#ffc93c','#9b6bff','#ff6b5e'];
+for(let i=0;i<44;i++){const d=document.createElement('i');const c=lc[i%5];d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.background=c;d.style.boxShadow='0 0 '+(8+Math.random()*16)+'px '+c;d.style.animationDuration=(7+Math.random()*10)+'s';d.style.animationDelay=(-Math.random()*10)+'s';const sz=2+Math.random()*4;d.style.width=d.style.height=sz+'px';led.append(d)}}
 /* rotating word */
 {const words=['Party','Dancing','Pool Party','Fire Show','Kids Club','Beach Games','Colour Fest','Live Music'];let wi=0;const r=$('#rot');
 setInterval(()=>{r.classList.add('out');setTimeout(()=>{wi=(wi+1)%words.length;r.textContent=words[wi];r.classList.remove('out')},300)},2400)}
 /* marquee */
 {const items=['Foam Party','Carnival Night','Fire Show','Mini Disco','Colour Party','Beach Volleyball','Aqua Aerobics','Live Singer','Aloha Party','White Party','Kids Disco','Acrobatic Show','Pink Party','Arabian Nights','New Year Gala','Ramadan Nights'];
 $('#marq').innerHTML=(items.map(i=>'<span>✦ '+i+'</span>').join('')).repeat(2)}
+#led{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#led i{position:absolute;border-radius:50%;opacity:.22;animation:twk ease-in-out infinite alternate}
+@keyframes twk{from{opacity:.06;transform:translateY(0) scale(.8)}to{opacity:.45;transform:translateY(-34px) scale(1.15)}}
+.grad-text{filter:drop-shadow(0 0 22px rgba(255,79,160,.22))}
 /* scroll progress */
 addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 /* detail modal + lightbox */
@@ -355,9 +366,9 @@ $('#kidimg').onclick=()=>zoom($('#kidimg').src,'Kids program');
 const who=[["Genuine Passion","dance","Real enthusiasm in every interaction, never a rehearsed script."],["Signature Experiences","fireworks","Moments guests remember long after check-out."],["A Trusted Partner","handshake","Reliable, adaptable, focused on each hotel's success."],["An International Outlook","diverse","Built to connect with guests from anywhere in the world."]];
 who.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[1]];im.alt=w[0];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[1],w[0],'<p>'+w[2]+'</p>');$('#whogrid').append(c)});
 /* daytime */
-const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yoga"],["Boccia","volleyball"],["Daily Program Announcements","welcome"]]],
-["Midday · High Energy Focus","aqua",[["Aqua Aerobics","aqua"],["Water Polo","poolwoman"],["Poolside Games & Pool Party","foam"],["Beach Volleyball","volleyball"]]],
-["Afternoon · Social & Skill","beachfoot",[["Football & Mini-Tournaments","beachfoot"],["Table Tennis","olympic"],["Darts","happyguests"],["Dance Workshop","dance"],["Culinary Workshop","resort"]]]];
+const day=[["Morning · Awaken & Move","yoga",[["Morning Mobility & Stretch","yoga"],["Boccia","boccia"],["Daily Program Announcements","welcome"]]],
+["Midday · High Energy Focus","aqua",[["Aqua Aerobics","aqua"],["Water Polo","poolwoman"],["Poolside Games & Pool Party","poolparty"],["Beach Volleyball","volleyball"]]],
+["Afternoon · Social & Skill","beachfoot",[["Football & Mini-Tournaments","beachfoot"],["Table Tennis","olympic"],["Darts","darts"],["Dance Workshop","dancelesson"],["Culinary Workshop","chef"]]]];
 const dtab=$('#dtabs'),dpan=$('#dpanels');
 day.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#dtabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#dpanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};dtab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
@@ -369,8 +380,8 @@ pn.querySelector('.pim img').onclick=e=>zoom(e.target.src,d[0]);
 dpan.append(pn)});
 /* evening */
 const night=[["High-Energy & Party","foam",[["Mini Disco","kidsdisco"],["Beach Party","beachnight"],["Foam Party","foam"]]],
-["Theatrical & Visual Spectacle","fire",[["Light Show","fire2"],["Fire Show","fire"],["Acrobatic Show","acro"],["Fakir Show","oriental"],["Dance Show","dance"],["Oriental Show","oriental"]]],
-["Interactive & Hosting","karaoke",[["Live Hosting (MC)","karaoke"],["Talent Show","applause"],["Music Quiz Night","singer"]]]];
+["Theatrical & Visual Spectacle","fire",[["Light Show","fire2"],["Fire Show","fire"],["Acrobatic Show","acro"],["Fakir Show","fakir"],["Dance Show","dance"],["Oriental Show","oriental"]]],
+["Interactive & Hosting","karaoke",[["Live Hosting (MC)","karaoke"],["Talent Show","applause"],["Music Quiz Night","quiz"]]]];
 const ntab=$('#ntabs'),npan=$('#npanels');
 night.forEach((d,i)=>{const b=document.createElement('button');b.className='tab'+(i?'':' on');b.textContent=d[0];b.onclick=()=>{$$('#ntabs .tab').forEach((t,j)=>t.classList.toggle('on',j===i));$$('#npanels .panel').forEach((p,j)=>p.classList.toggle('act',j===i))};ntab.append(b);
 const pn=document.createElement('div');pn.className='panel'+(i?'':' act');
