@@ -29,7 +29,7 @@ img{display:block}
 nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:10px 4vw;background:rgba(7,19,31,.78);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.09);overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
 nav .brand{display:flex;align-items:center;gap:8px;font-family:'Fredoka';font-weight:700;letter-spacing:.14em;font-size:.86rem;white-space:nowrap}
-nav .brand img{width:30px;height:30px;border-radius:8px}
+nav .brand img{width:30px;height:30px}
 nav .sp{flex:1}
 nav a.lnk{white-space:nowrap;font-size:.82rem;font-weight:500;color:var(--mut);padding:7px 12px;border-radius:999px;transition:.25s}
 nav a.lnk:hover{color:var(--ink);background:rgba(255,255,255,.08)}
@@ -39,7 +39,7 @@ header{min-height:100svh;display:flex;flex-direction:column;justify-content:cent
 #confetti{position:absolute;inset:0;pointer-events:none}
 #confetti i{position:absolute;width:9px;height:9px;border-radius:3px;opacity:.85;animation:fall linear infinite}
 @keyframes fall{from{transform:translateY(-8vh) rotate(0)}to{transform:translateY(112vh) rotate(560deg)}}
-header .logo{width:min(46vw,220px);border-radius:24px;box-shadow:0 18px 60px rgba(0,0,0,.5);animation:bob 5s ease-in-out infinite}
+header .logo{width:min(54vw,250px);filter:drop-shadow(0 20px 46px rgba(0,0,0,.55));animation:bob 5s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
 header .eyebrow{margin-top:26px;font-size:.72rem;letter-spacing:.34em;color:var(--sun);font-weight:600}
 header h1{font-size:clamp(2.6rem,11vw,6rem);line-height:1.02;margin:14px 0 6px;font-weight:700}
@@ -158,6 +158,18 @@ footer{padding:26px 5vw 40px;text-align:center;color:var(--mut);font-size:.8rem;
 #lb .c{display:flex;gap:14px;align-items:center;margin-top:14px;color:var(--mut);font-size:.9rem}
 #lb button{padding:9px 18px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:transparent;color:var(--ink);cursor:pointer;font-size:.95rem;transition:.2s}
 #lb button:hover{border-color:var(--sun);color:var(--sun)}
+/* 3D carousels */
+.carwrap{position:relative;margin:24px -5vw 0}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 12vw;perspective:1100px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+.car>*{flex:0 0 min(68vw,290px);scroll-snap-align:center;will-change:transform;transition:border-color .3s,box-shadow .3s}
+.car>.sw{flex-basis:min(82vw,350px)}
+.car .tile,.car .card{border-radius:30px 40px 28px 42px;transform-style:preserve-3d}
+.car .tile{aspect-ratio:3/4}
+.car .card img{height:190px}
+.carbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(7,19,31,.65);color:var(--sun);font-size:1.15rem;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center;transition:.25s}
+.carbtn:hover{background:var(--sun);color:#131020}
+.carbtn.l{left:1.5vw}.carbtn.r{right:1.5vw}
 /* reveal on scroll */
 .reveal .st{opacity:0;transform:translateY(34px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);transition-delay:calc(var(--i)*70ms)}
 .reveal .st.alt{transform:translateY(34px) rotate(1.5deg)}
@@ -204,7 +216,7 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">WHO WE ARE</div>
 <h2>Built On One <span class="grad-text">Conviction</span></h2>
 <p class="lead">A guest's most treasured holiday memories are designed, not left to chance. As a dedicated hotel entertainment and animation company for the Red Sea region, we bring genuine energy, imagination and warmth into every hour of a guest's stay. Every activity, show and celebration is shaped around each hotel's identity and the guests who choose it, never a template borrowed from somewhere else.</p>
-<div class="grid" id="whogrid"></div>
+<div class="carwrap"><div class="car" id="whogrid"></div><button class="carbtn l" data-car="whogrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="whogrid" aria-label="Next">›</button></div>
 </section>
 
 <section id="day" class="reveal">
@@ -227,7 +239,7 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">SIGNATURE EVENTS</div>
 <h2>The Centerpiece Of <span class="grad-text">Every Week</span></h2>
 <p class="lead">Beyond the nightly calendar, themed signature events give each week its own unforgettable centerpiece. Tap the events you love and build your week.</p>
-<div class="tiles wide" id="evgrid"></div>
+<div class="carwrap"><div class="car" id="evgrid"></div><button class="carbtn l" data-car="evgrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="evgrid" aria-label="Next">›</button></div>
 <div id="evview"><div class="pim"><img id="evimg" alt=""></div><div class="pinfo"><h3 id="evname"></h3><p id="evdesc"></p><p id="evnote"></p></div></div>
 <p class="hint">Styling and décor scaled to fit each hotel's agreement.</p>
 </section>
@@ -236,14 +248,14 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">SEASONAL CALENDAR</div>
 <h2>All Year Round, <span class="grad-text">A Reason To Celebrate</span></h2>
 <p class="lead">Beyond the weekly program, we produce full seasonal celebrations, each with its own theme, décor and show design. Tap any celebration for details.</p>
-<div class="tiles wide" id="seagrid"></div>
+<div class="carwrap"><div class="car" id="seagrid"></div><button class="carbtn l" data-car="seagrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="seagrid" aria-label="Next">›</button></div>
 </section>
 
 <section id="kids" class="reveal">
 <div class="eyebrow">KIDS PROGRAM</div>
 <h2>Where Play Meets <span class="grad-text">Discovery</span></h2>
 <p class="lead">A dedicated program where young guests play, create and make friends, giving parents genuine time to relax.</p>
-<div class="tiles" id="kidlist"></div>
+<div class="carwrap"><div class="car" id="kidlist"></div><button class="carbtn l" data-car="kidlist" aria-label="Previous">‹</button><button class="carbtn r" data-car="kidlist" aria-label="Next">›</button></div>
 <div class="panel act" style="display:grid;margin-top:16px" id="kidpanel"><div class="pim"><img id="kidimg" alt=""></div><div class="pinfo" id="kidinfo"><h3>Pick an activity</h3></div></div>
 </section>
 
@@ -251,7 +263,7 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">WEEKLY SHOW CALENDAR</div>
 <h2>A Different <span class="grad-text">Spectacle</span>, Every Night</h2>
 <p class="lead">A professional, energetic and genuinely diverse show offering, staged across the week and scaled to each hotel's needs. Tap any show for details.</p>
-<div class="tiles wide" id="freqgrid"></div>
+<div class="carwrap"><div class="car" id="freqgrid"></div><button class="carbtn l" data-car="freqgrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="freqgrid" aria-label="Next">›</button></div>
 </section>
 
 <section id="team" class="reveal">
@@ -259,15 +271,15 @@ section{padding:90px 4vw 40px}
 <h2>The Crew Behind <span class="grad-text">The Magic</span></h2>
 <p class="lead">Guests arrive speaking many languages and carrying many expectations. We build every entertainment team with that reality in mind: entertainers, coordinators and hosts who make an international guest base feel personally welcomed. Team size and language mix are shaped around each hotel's guest profile, season and scale, never a fixed roster.</p>
 <div class="chips"><span class="chip">🎯 Matched to your market</span><span class="chip">✈️ Recruited internationally</span><span class="chip">💬 Fluent hospitality</span></div>
-<div class="team" id="teamcards"></div>
+<div class="carwrap"><div class="car" id="teamcards"></div><button class="carbtn l" data-car="teamcards" aria-label="Previous">‹</button><button class="carbtn r" data-car="teamcards" aria-label="Next">›</button></div>
 </section>
 
 <section id="why" class="reveal">
 <div class="eyebrow">THE KING'S UNITED WAY</div>
 <h2>What Makes Us <span class="grad-text">Different</span></h2>
 <p class="lead">Entertainment as a craft, not a checkbox. Six things every partner hotel can count on, and four promises we keep every single season.</p>
-<div class="swg" id="swgrid"></div>
-<div class="grid" style="margin-top:16px" id="pillargrid"></div>
+<div class="carwrap"><div class="car" id="swgrid"></div><button class="carbtn l" data-car="swgrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="swgrid" aria-label="Next">›</button></div>
+<div class="carwrap"><div class="car" id="pillargrid"></div><button class="carbtn l" data-car="pillargrid" aria-label="Previous">‹</button><button class="carbtn r" data-car="pillargrid" aria-label="Next">›</button></div>
 </section>
 
 <section id="provide" class="reveal">
@@ -303,7 +315,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script>
+<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script><script src="d13.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -315,7 +327,7 @@ if(flip){bg1.style.backgroundImage='url('+nxt+')';bg1.style.opacity=1;bg2.style.
 flip=!flip},9000);
 bg1.style.transition=bg2.style.transition='opacity 2.4s';
 /* logos */
-$('#navlogo').src=IMG.k;$('#herologo').src=IMG.logo;
+$('#navlogo').src=IMG.mark;$('#herologo').src=IMG.mark;
 {const l=document.createElement('link');l.rel='icon';l.href=IMG.k;document.head.append(l)}
 /* confetti */
 {const cf=$('#confetti'),cols=['#ffc93c','#ff6b5e','#ff4fa0','#17d3da','#9b6bff','#fff'];
@@ -390,8 +402,33 @@ sw.forEach(s=>{const d=document.createElement('div');d.className='sw';const im=n
 /* pillars */
 const pil=[["✨","Bespoke Programming","Every calendar shaped around your concept.","calendar"],["🎬","Polished Delivery","Professional execution guests notice, without seeing the effort.","stagesetup"],["💫","Lasting Impressions","Moments guests carry home, and return for.","applause"],["🤝","Collaborative Partnership","Aligned with your goals, season after season.","handshake"]];
 pil.forEach(w=>{const c=document.createElement('div');c.className='card';const im=new Image;im.src=TIMG[w[3]];im.alt=w[1];im.loading='lazy';const p=document.createElement('div');p.className='pad';p.innerHTML='<h3>'+w[0]+' '+w[1]+'</h3><p>'+w[2]+'</p>';c.append(im,p);c.onclick=()=>detail(w[3],w[1],'<p>'+w[2]+'</p>');$('#pillargrid').append(c)});
+/* 3D carousels */
+.carwrap{position:relative;margin:24px -5vw 0}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px 12vw;perspective:1100px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+.car>*{flex:0 0 min(68vw,290px);scroll-snap-align:center;will-change:transform;transition:border-color .3s,box-shadow .3s}
+.car>.sw{flex-basis:min(82vw,350px)}
+.car .tile,.car .card{border-radius:30px 40px 28px 42px;transform-style:preserve-3d}
+.car .tile{aspect-ratio:3/4}
+.car .card img{height:190px}
+.carbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(7,19,31,.65);color:var(--sun);font-size:1.15rem;cursor:pointer;backdrop-filter:blur(6px);display:grid;place-items:center;transition:.25s}
+.carbtn:hover{background:var(--sun);color:#131020}
+.carbtn.l{left:1.5vw}.carbtn.r{right:1.5vw}
+function carfy(car){
+const upd=()=>{const cr=car.getBoundingClientRect(),cc=cr.left+cr.width/2;
+[...car.children].forEach(it=>{const r=it.getBoundingClientRect(),d=((r.left+r.width/2)-cc)/cr.width;
+it.style.transform='rotateY('+(-d*30)+'deg) translateZ('+(-Math.abs(d)*180)+'px) scale('+(1-Math.min(Math.abs(d)*.14,.28))+')';
+it.style.opacity=1-Math.min(Math.abs(d)*.4,.55);
+const img=it.querySelector('img');if(img)img.style.objectPosition=(50+d*36)+'% 50%'})};
+car.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
+addEventListener('resize',upd);
+const first=car.children[0];
+if(first)car.scrollLeft=first.offsetLeft-(car.clientWidth-first.clientWidth)/2;
+upd()}
+$$('.car').forEach(carfy);
+$$('.carbtn').forEach(b=>b.onclick=()=>{const car=document.getElementById(b.dataset.car);const it=car.children[0];const step=it?it.offsetWidth+18:300;car.scrollBy({left:(b.classList.contains('r')?1:-1)*step,behavior:'smooth'})});
 /* reveal on scroll */
-$$('.reveal').forEach(sec=>sec.querySelectorAll('.grid>*,.swg>*,.team>*,.tiles>*,.prov>*,.chips>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
+$$('.reveal').forEach(sec=>sec.querySelectorAll('.car,.prov>*,.chips>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
 $$('.reveal').forEach(s=>io.observe(s));
 </script></body></html>
