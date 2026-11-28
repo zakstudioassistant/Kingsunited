@@ -185,7 +185,7 @@ section{padding:90px 4vw 40px}
 
 <nav>
 <span class="brand"><img id="navlogo" alt="K">KING'S UNITED</span><span class="sp"></span>
-<a class="lnk" href="#who">The Vibe</a><a class="lnk" href="#day">Daytime</a><a class="lnk" href="#night">Nights</a><a class="lnk" href="#kids">Kids</a><a class="lnk" href="#events">Events</a><a class="lnk" href="#shows">Shows</a><a class="lnk" href="#team">Team</a><a class="lnk cta" href="#contact">Contact</a>
+<a class="lnk" href="#who">The Vibe</a><a class="lnk" href="#day">Daytime</a><a class="lnk" href="#night">Nights</a><a class="lnk" href="#kids">Kids</a><a class="lnk" href="#events">Events</a><a class="lnk" href="#season">Seasonal</a><a class="lnk" href="#shows">Shows</a><a class="lnk" href="#team">Team</a><a class="lnk cta" href="#contact">Contact</a>
 </nav>
 
 <header id="top">
@@ -194,7 +194,7 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">HOTEL ENTERTAINMENT &amp; GUEST EXPERIENCE · RED SEA, EGYPT</div>
 <h1><span class="grad-text">We Bring</span><br>The <span class="rot" id="rot">Party</span></h1>
 <p class="sub">Daytime energy, spectacular nights, kids club magic and signature weekly events. King's United turns every stay into the holiday your guests talk about long after check-out.</p>
-<div class="cta-row"><a class="btn solid" href="#who">Feel The Vibe ↓</a><a class="btn ghost" href="tel:01156080116">📞 01156080116</a></div>
+<div class="cta-row"><a class="btn solid" href="#who">Feel The Vibe ↓</a><a class="btn ghost" href="tel:+201156080116">📞 +201156080116</a></div>
 <div class="cue">⌄</div>
 </header>
 
@@ -230,6 +230,13 @@ section{padding:90px 4vw 40px}
 <div class="tiles wide" id="evgrid"></div>
 <div id="evview"><div class="pim"><img id="evimg" alt=""></div><div class="pinfo"><h3 id="evname"></h3><p id="evdesc"></p><p id="evnote"></p></div></div>
 <p class="hint">Styling and décor scaled to fit each hotel's agreement.</p>
+</section>
+
+<section id="season" class="reveal">
+<div class="eyebrow">SEASONAL CALENDAR</div>
+<h2>All Year Round, <span class="grad-text">A Reason To Celebrate</span></h2>
+<p class="lead">Beyond the weekly program, we produce full seasonal celebrations, each with its own theme, décor and show design. Tap any celebration for details.</p>
+<div class="tiles wide" id="seagrid"></div>
 </section>
 
 <section id="kids" class="reveal">
@@ -287,7 +294,7 @@ section{padding:90px 4vw 40px}
 <div class="eyebrow">GET IN TOUCH</div>
 <h2>Let's Make Your Season <span class="grad-text">Unforgettable</span></h2>
 <p class="lead" style="margin:0 auto">One call is all it takes. We would love to hear about your hotel, your guests and the season you're dreaming of.</p>
-<a class="big grad-text" href="tel:01156080116">01156080116</a>
+<a class="big grad-text" href="tel:+201156080116">+201156080116</a>
 <p class="note">King's United Entertainment Company · Red Sea, Egypt</p>
 </section>
 
@@ -296,7 +303,7 @@ section{padding:90px 4vw 40px}
 <div id="dv"><div id="dvc"><img id="dvi" alt=""><div id="dvb"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx">Close</button></div></div></div>
 <div id="lb"><img id="lbi" alt=""><div class="c"><span id="lbn"></span><button id="x">Close</button></div></div>
 
-<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script>
+<script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script src="d12.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const phk=Object.keys(PH);
@@ -317,7 +324,7 @@ for(let i=0;i<26;i++){const d=document.createElement('i');d.style.left=Math.rand
 {const words=['Party','Dancing','Pool Party','Fire Show','Kids Club','Beach Games','Colour Fest','Live Music'];let wi=0;const r=$('#rot');
 setInterval(()=>{r.classList.add('out');setTimeout(()=>{wi=(wi+1)%words.length;r.textContent=words[wi];r.classList.remove('out')},300)},2400)}
 /* marquee */
-{const items=['Foam Party','Carnival Night','Fire Show','Mini Disco','Colour Party','Beach Volleyball','Aqua Aerobics','Live Singer','Aloha Party','White Party','Kids Disco','Acrobatic Show','Pink Party','Arabian Nights'];
+{const items=['Foam Party','Carnival Night','Fire Show','Mini Disco','Colour Party','Beach Volleyball','Aqua Aerobics','Live Singer','Aloha Party','White Party','Kids Disco','Acrobatic Show','Pink Party','Arabian Nights','New Year Gala','Ramadan Nights'];
 $('#marq').innerHTML=(items.map(i=>'<span>✦ '+i+'</span>').join('')).repeat(2)}
 /* scroll progress */
 addEventListener('scroll',()=>{const h=document.documentElement;$('#prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
@@ -365,6 +372,8 @@ npan.append(pn)});
 const evs=[["Carnival Night","carnival","Costumes, parade energy and street performers."],["Foam Party","foam","Foam cannons, DJ and non-stop dancing."],["Colour Party","holi","A powder-colour celebration at sunset."],["Olympic Day","olympic","Guests compete in fun team games all day."],["Inflatable Fun Day","inflatable","Giant inflatables on the beach and lawn."],["White Party","whiteparty","All-white dress code, an elegant night under the lights."],["African Night","african","Drums, dance and African rhythms."],["Boho Night","boho","Bohemian styling, lanterns and laid-back music."],["Pharaonic Night","pharaonic","Ancient-Egypt themed show, costume and décor."],["Pink Party","pink","Pink dress code, neon lights and feel-good pop."],["Aloha Party","aloha","A Hawaiian luau with leis and island beats."],["Arabian Nights","arabian","Lanterns, oriental music and Arabian atmosphere."]];
 let sel=new Set;
 evs.forEach(n=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[n[1]];im.alt=n[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=n[0];d.append(im,sp);d.onclick=()=>{sel.has(n[0])?sel.delete(n[0]):sel.add(n[0]);d.classList.toggle('act');$('#evimg').src=TIMG[n[1]];$('#evimg').alt=n[0];$('#evname').textContent=n[0];$('#evdesc').textContent=n[2];$('#evview').classList.add('on');$('#evnote').textContent=sel.size?'Your week: '+[...sel].join(' · '):'Tap an event to pick it for your week.'};$('#evgrid').append(d)});
+const season=[["Christmas Celebration","xmas","Tree lighting, festive décor and a Christmas show for the whole family."],["New Year's Eve Gala","newyear","Countdown party, live show and sparkler-lit celebration to welcome the new year."],["Valentine's Day","valentine","A romantic evening program with love-themed décor, music and surprises."],["Mother's Day","mothersday","A warm celebration honoring mothers with flowers, shows and heartfelt moments."],["Easter & Sham El Nessim","easter","Spring celebrations, egg hunts and outdoor family fun in the Easter air."],["Ramadan & Eid","ramadan","Lantern-lit Ramadan nights and joyful Eid celebrations with themed décor."],["Halloween Party","halloween","Costumes, spooky styling and trick-or-treat fun for all ages."],["World Kids Day","kidsday","A full day dedicated to our youngest guests: games, shows and prizes."]];
+season.forEach(n=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[n[1]];im.alt=n[0];im.loading='lazy';const sp=document.createElement('span');sp.textContent=n[0];d.append(im,sp);d.onclick=()=>detail(n[1],n[0],'<p>'+n[2]+'</p>');$('#seagrid').append(d)});
 /* kids */
 const kids=[["Mini Club & Kids Circle","kidsclub"],["Arts & Crafts / Face Painting","facepaint"],["Treasure Hunts","treasure"],["Games & Friendly Competitions","kidsgames"],["Sports & Beach Activities","kidsbeach"],["Kids Shows & Mini Disco","kidsdisco"],["Evening Kids Program","kidsmovie"]];
 const kd=[["Engaging by Design","Activities built for a range of ages."],["Play with Purpose","Creative, confidence-building activities."],["New Friendships","Shared games, shared holiday memories."],["A Dedicated Team","Attentive, carefully trained hosts."]];
