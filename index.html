@@ -20,7 +20,7 @@ section{padding:96px 8vw 40px;max-width:1300px;margin:auto}
 .eyebrow{color:var(--gold);letter-spacing:.2em;font-size:.78rem;text-transform:uppercase}
 h2{font-size:clamp(2rem,4vw,3.2rem);margin:6px 0 18px}
 .lead{color:var(--mut);max-width:760px;font-size:1.08rem}
-#hero{min-height:100vh;max-width:none;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}#hero:before{content:'';position:absolute;inset:-30px;background:linear-gradient(rgba(7,9,15,.5),rgba(7,9,15,.88)),var(--hero) center/cover;filter:blur(18px);z-index:-1}#hero>*{position:relative}#hero .logo{height:150px;margin-bottom:26px;border-radius:6px;box-shadow:0 0 60px rgba(216,178,106,.35)}
+#hero{min-height:100vh;max-width:none;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden}#hero:before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(7,9,15,.30),rgba(7,9,15,.62)),var(--p32393942) center/cover;z-index:-1;animation:zoom 28s ease-in-out infinite alternate}#hero>*{position:relative}#hero .logo{height:150px;margin-bottom:26px;border-radius:6px;box-shadow:0 0 60px rgba(216,178,106,.35)}
 #hero h1{font-size:clamp(2.6rem,7vw,5.5rem);margin:10px 0}
 #hero .sub{letter-spacing:.3em;color:var(--gold2);font-size:.85rem}
 .btn{display:inline-block;margin-top:28px;padding:13px 30px;border:1px solid var(--gold);color:var(--gold);text-decoration:none;border-radius:2px;letter-spacing:.1em;transition:.25s;background:none;cursor:pointer;font-size:.9rem}
@@ -39,15 +39,13 @@ td:last-child:before{content:'◆ ';color:var(--gold)}
 .tab,.chip{padding:9px 20px;border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:30px;cursor:pointer;font-size:.88rem;transition:.2s}
 .tab.act,.chip.act,.tab:hover,.chip:hover{background:var(--gold);color:#000;border-color:var(--gold)}
 .panel{display:none;gap:30px;grid-template-columns:1.1fr 1fr;align-items:center}.panel.act{display:grid}
-.panel img{width:100%;border-radius:6px;border:1px solid var(--line);cursor:zoom-in}
+.panel .pim{overflow:hidden;border-radius:14px;border:1px solid var(--line)}
+.panel img{width:100%;display:block;cursor:zoom-in}
 .panel h3{font-size:1.8rem;color:var(--gold2)}.panel ul{list-style:none;padding:0;margin-top:12px}
-.panel li{padding:6px 0;border-bottom:1px solid var(--line);color:var(--tx)}.panel li:before{content:'◆ ';color:var(--gold);font-size:.7rem}
+.panel li{padding:6px 0 6px 8px;border-bottom:1px solid var(--line);color:var(--tx)}.panel li:before{content:'◆ ';color:var(--gold);font-size:.7rem}
 .items{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .pill{padding:6px 14px;border:1px solid var(--line);border-radius:20px;font-size:.85rem;background:var(--card);cursor:pointer}
 .pill.act{background:var(--gold);color:#000}
-.ev{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:26px}
-.ev div{padding:26px 14px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:6px;font-family:Georgia,serif;transition:.3s;cursor:pointer}
-.ev div:hover,.ev div.act{background:linear-gradient(135deg,#3a2c10,#171207);border-color:var(--gold);color:var(--gold2)}
 #evnote{margin-top:14px;color:var(--mut);min-height:1.6em}
 .deck{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-top:26px}
 .deck img{width:100%;border-radius:4px;border:1px solid var(--line);cursor:zoom-in;transition:.3s}.deck img:hover{transform:scale(1.04);border-color:var(--gold)}
@@ -62,7 +60,110 @@ td:last-child:before{content:'◆ ';color:var(--gold)}
 #contact .ph{font-family:Georgia,serif;font-size:clamp(2.2rem,6vw,4.4rem);color:var(--gold2);text-decoration:none;display:block;margin:14px 0;letter-spacing:.05em}
 footer{text-align:center;padding:24px;color:var(--mut);font-size:.8rem;border-top:1px solid var(--line)}
 @media(max-width:800px){nav a{display:none}.panel.act{grid-template-columns:1fr}section{padding:84px 6vw 30px}}
-</style></head><body>
+#bgfx{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:#07101c}
+#bgfx i{position:absolute;inset:0;opacity:0;background-size:cover;background-position:center;animation:fade 32s infinite}
+#bgfx i:nth-child(1){background-image:var(--p12169315);animation-delay:0s}
+#bgfx i:nth-child(2){background-image:var(--p39591184);animation-delay:8s}
+#bgfx i:nth-child(3){background-image:var(--p39550243);animation-delay:16s}
+#bgfx i:nth-child(4){background-image:var(--p32393942);animation-delay:24s}
+#bgfx:after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(7,12,24,.25),rgba(7,12,24,.45))}
+@keyframes fade{0%{opacity:0;transform:scale(1)}6%{opacity:1}25%{opacity:1}31%{opacity:0;transform:scale(1.1)}100%{opacity:0;transform:scale(1.1)}}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.1)}}
+@media (prefers-reduced-motion:reduce){#bgfx i,#hero:before{animation:none}#bgfx i:first-child{opacity:1}}
+section{background:rgba(7,12,24,.58)}
+#hero{background:none}
+.card,.pill,.tab,.chip,.team .card.act{background:rgba(10,16,30,.38)!important;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);border-color:rgba(216,178,106,.35)}
+.tab.act,.chip.act,.tab:hover,.chip:hover,.pill.act{background:var(--gold)!important;backdrop-filter:none}
+section{background:rgba(7,12,24,.18)!important}
+h1,h2,h3,.lead,p,td,li,.card p{text-shadow:0 1px 6px rgba(0,0,0,.75)}
+.card p,.lead,td:first-child{color:#d6d9e2}
+
+/* v2 compact + cute */
+section{padding:62px 7vw 14px!important}
+h2{font-size:clamp(1.7rem,3.2vw,2.5rem);margin:2px 0 10px}
+.lead{font-size:.98rem;line-height:1.55}
+.grid{gap:12px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.card{padding:14px 16px;border-radius:14px}
+.card h3{font-size:1.05rem}.card p{font-size:.88rem;line-height:1.45}
+.ic{font-size:1.6rem;margin-bottom:2px;display:inline-block;animation:bob 3.2s ease-in-out infinite}
+.card:nth-child(2n) .ic{animation-delay:-1s}.card:nth-child(3n) .ic{animation-delay:-2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(6deg)}}
+.card:hover .ic{animation-duration:.8s}
+.card,.pill,.tab,.chip{border-radius:16px!important}
+.tab,.pill{border-radius:30px!important}
+.swg{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:10px;margin-top:18px}
+.sw{display:grid;grid-template-columns:1fr auto;gap:2px 10px;align-items:center;padding:12px 16px;border-radius:16px;background:rgba(10,16,30,.38);backdrop-filter:blur(7px);border:1px solid rgba(216,178,106,.35);transition:.3s;cursor:pointer}
+.sw .o{grid-column:1/2;color:#aab;font-size:.8rem;text-decoration:line-through;text-decoration-color:#a77}
+.sw .ar{grid-column:2;grid-row:1/3;color:var(--gold);font-size:1.3rem;transition:.3s}
+.sw .n{grid-column:1/2;font-size:.92rem;line-height:1.4}
+.sw:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(120,88,24,.4)}
+.sw:hover .ar{transform:translateX(5px) scale(1.2)}
+.team{gap:10px;margin-top:16px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+#teaminfo{margin-top:10px;padding:10px 16px;border-left:3px solid var(--gold);background:rgba(10,16,30,.4);border-radius:0 12px 12px 0;min-height:2.6em;color:#e9e6df;animation:pop .4s}
+.items{gap:7px;margin-top:10px}
+.pill{padding:6px 14px;transition:.25s}.pill:hover{transform:translateY(-2px) rotate(-2deg);border-color:var(--gold)}
+.tabs{margin:14px 0}
+.panel{gap:18px;grid-template-columns:1fr 1fr}
+.panel img{max-height:300px;object-fit:cover}
+.panel.act{animation:pop .45s}
+.panel h3{font-size:1.4rem}.panel li{padding:4px 0 4px 8px}
+.deck{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin-top:16px;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--gold) transparent}
+.deck img{flex:0 0 230px;width:230px;max-width:62vw;height:auto;scroll-snap-align:start}
+.dk{display:flex;gap:8px;margin-top:10px}.dk button{background:rgba(10,16,30,.5);border:1px solid var(--gold);color:var(--gold);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:1.1rem}.dk button:hover{background:var(--gold);color:#000}
+#contact{padding-bottom:60px!important}
+#hero .logo{animation:bob 4s ease-in-out infinite}
+.btn{border-radius:30px;animation:glow 2.6s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(216,178,106,.5)}50%{box-shadow:0 0 0 10px rgba(216,178,106,0)}}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes popL{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+.reveal.on .st{animation:pop .5s backwards;animation-delay:calc(var(--i)*60ms)}
+.reveal.on .st.alt{animation-name:popL}
+@media(max-width:800px){nav{gap:16px;overflow-x:auto;padding:10px 16px}nav b{display:none}nav a{display:inline-block;white-space:nowrap}section{padding:56px 5vw 10px!important}.panel.act{grid-template-columns:1fr}.swg{grid-template-columns:1fr}.grid,.team{grid-template-columns:1fr 1fr;gap:8px}.card h3{font-size:.95rem}.card p{font-size:.8rem}}
+@media (prefers-reduced-motion:reduce){.ic,.btn,#hero .logo{animation:none}.reveal.on .st{animation:none}}
+
+/* v3 image-rich interactions: every card, tile and tab reveals a relevant moving image */
+@keyframes kb{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.18) translate(-2.5%,2.5%)}}
+@media (prefers-reduced-motion:reduce){.icard .th img,.tile img,.evt img,#evview img,.dvc .im img,.panel .pim img{animation:none}}
+.icard{padding:0!important;overflow:hidden;cursor:pointer;text-align:left}
+.icard .th{height:120px;overflow:hidden}
+.icard .th img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 16s ease-in-out infinite alternate;transition:transform .4s}
+.icard:hover .th img{animation-play-state:paused;transform:scale(1.12)}
+.icard .bd{padding:12px 16px 14px}
+.team .icard .bd{text-align:center}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.tile{position:relative;height:98px;border-radius:14px;overflow:hidden;border:1px solid rgba(216,178,106,.35);cursor:pointer;transition:.3s;background:#0a1020}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:16px 10px 7px;font-size:.82rem;line-height:1.25;background:linear-gradient(transparent,rgba(4,8,16,.9));text-shadow:0 1px 4px #000}
+.tile:hover{transform:translateY(-3px);border-color:var(--gold)}
+.tile.act{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
+.ev{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:20px}
+.evt{position:relative;height:132px;border-radius:14px;overflow:hidden;border:1px solid rgba(216,178,106,.35);cursor:pointer;transition:.3s;background:#0a1020}
+.evt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 20s ease-in-out infinite alternate}
+.evt span{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 8px;font-family:Georgia,serif;font-size:.95rem;background:linear-gradient(transparent,rgba(4,8,16,.92));text-shadow:0 1px 4px #000}
+.evt:hover{transform:translateY(-3px);border-color:var(--gold)}
+.evt.act{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold) inset}
+.evt.act:after{content:'✓';position:absolute;top:8px;right:8px;background:var(--gold);color:#000;border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:.8rem;font-weight:700}
+#evview{margin-top:16px;border-radius:16px;overflow:hidden;border:1px solid rgba(216,178,106,.35);display:none}
+#evview.on{display:block;animation:pop .45s}
+#evview .im{height:min(42vw,300px);overflow:hidden}
+#evview img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;animation:kb 20s ease-in-out infinite alternate}
+#evview .cap{padding:10px 16px;background:rgba(10,16,30,.5);backdrop-filter:blur(7px);font-size:.9rem;color:#d6d9e2}
+#evview .cap b{color:var(--gold2)}
+.panel .pim img{animation:kb 18s ease-in-out infinite alternate}
+.panel li{cursor:pointer;transition:.2s;border-radius:8px}
+.panel li:hover{color:var(--gold2);transform:translateX(4px)}
+#dv{position:fixed;inset:0;background:rgba(3,6,12,.9);display:none;align-items:center;justify-content:center;z-index:120;padding:4vw}
+#dv.on{display:flex}
+.dvc{width:min(680px,94vw);max-height:92vh;overflow:auto;background:#0d1322;border:1px solid rgba(216,178,106,.45);border-radius:18px;animation:pop .35s}
+.dvc .im{height:min(46vh,320px);overflow:hidden}
+.dvc .im img{width:100%;height:100%;object-fit:cover;display:block;animation:kb 18s ease-in-out infinite alternate}
+.dvc .tx{padding:18px 22px 22px}
+.dvc .tx h3{color:var(--gold2);font-size:1.5rem;margin-bottom:8px}
+.dvc .tx p,.dvc .tx li{color:#d6d9e2;font-size:.95rem;text-shadow:none}
+.dvc .tx ul{list-style:none;padding:0}.dvc .tx li{padding:5px 0;border-bottom:1px solid var(--line)}.dvc .tx li:before{content:'◆ ';color:var(--gold);font-size:.7rem}
+#dvx{margin-top:16px}
+@media(max-width:800px){.icard .th{height:96px}.tiles{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}.tile{height:86px}.ev{grid-template-columns:1fr 1fr}.evt{height:112px}}
+</style></head><body><div id="bgfx" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div id="bar"></div>
 <nav><img data-x="k" src="" alt=""><b>KING'S UNITED</b>
 <a href="#who">Who we are</a><a href="#offer">Offer</a><a href="#team">Team</a><a href="#day">Daytime</a><a href="#kids">Kids</a><a href="#night">Evening</a><a href="#events">Events</a><a href="#value">Value</a><a href="#deck">Deck</a><a href="#contact">Contact</a></nav>
@@ -79,71 +180,67 @@ footer{text-align:center;padding:24px;color:var(--mut);font-size:.8rem;border-to
 <section id="who" class="reveal"><div class="eyebrow">Who we are</div><h2>Built On One Conviction</h2>
 <p class="lead">King's United Entertainment exists on a simple conviction: a guest's most treasured holiday memories are designed, not left to chance. As a dedicated hotel entertainment and animation partner for the Red Sea region, we bring genuine energy, imagination and warmth into every hour of a guest's stay. Every activity, show and celebration is shaped around your hotel's identity and the guests who choose to stay with you, never a template borrowed from somewhere else.</p>
 <div class="grid">
-<div class="card"><div class="ic">♛</div><h3>Genuine Passion</h3><p>Real enthusiasm in every interaction, never a rehearsed script.</p></div>
-<div class="card"><div class="ic">☆</div><h3>Signature Experiences</h3><p>Moments guests remember long after check-out.</p></div>
-<div class="card"><div class="ic">⚭</div><h3>A Trusted Partner</h3><p>Reliable, adaptable, focused on your hotel's success.</p></div>
-<div class="card"><div class="ic">🌐</div><h3>An International Outlook</h3><p>Built to connect with guests from anywhere in the world.</p></div></div></section>
+<div class="card icard" data-di="dance"><div class="th"><img data-timg="dance" alt="Dancers performing on stage"></div><div class="bd"><div class="ic">♛</div><h3>Genuine Passion</h3><p>Real enthusiasm in every interaction, never a rehearsed script.</p></div></div>
+<div class="card icard" data-di="fireworks"><div class="th"><img data-timg="fireworks" alt="Fireworks celebration"></div><div class="bd"><div class="ic">☆</div><h3>Signature Experiences</h3><p>Moments guests remember long after check-out.</p></div></div>
+<div class="card icard" data-di="handshake"><div class="th"><img data-timg="handshake" alt="Partnership handshake"></div><div class="bd"><div class="ic">⚭</div><h3>A Trusted Partner</h3><p>Reliable, adaptable, focused on your hotel's success.</p></div></div>
+<div class="card icard" data-di="diverse"><div class="th"><img data-timg="diverse" alt="An international team"></div><div class="bd"><div class="ic">🌐</div><h3>An International Outlook</h3><p>Built to connect with guests from anywhere in the world.</p></div></div></div></section>
 
 <section id="offer" class="reveal"><div class="eyebrow">What we offer</div><h2>A Partnership, Not A Package</h2>
 <p class="lead">What changes when entertainment is a partnership.</p>
-<table>
-<tr><td>Generic rosters</td><td>A multilingual, internationally minded team assembled around your guests' profile</td></tr>
-<tr><td>Off-the-shelf calendars</td><td>Bespoke daytime and evening schedules matched to your hotel's concept</td></tr>
-<tr><td>Reactive management</td><td>Transparent, responsive communication and a genuine partnership model</td></tr>
-<tr><td>Inconsistent execution</td><td>Consistent professional standards across every activity and every shift</td></tr>
-<tr><td>Fragmented communication</td><td>A single dedicated point of contact for smooth day-to-day coordination</td></tr>
-<tr><td>Base entertainment</td><td>Programming engineered to lift guest satisfaction and online review sentiment</td></tr></table>
+<div class="swg"><div class="sw" data-di="staff"><span class="o">Generic rosters</span><span class="ar">➜</span><span class="n">A multilingual, internationally minded team assembled around your guests' profile</span></div><div class="sw" data-di="calendar"><span class="o">Off-the-shelf calendars</span><span class="ar">➜</span><span class="n">Bespoke daytime and evening schedules matched to your hotel's concept</span></div><div class="sw" data-di="meeting"><span class="o">Reactive management</span><span class="ar">➜</span><span class="n">Transparent, responsive communication and a genuine partnership model</span></div><div class="sw" data-di="concierge"><span class="o">Inconsistent execution</span><span class="ar">➜</span><span class="n">Consistent professional standards across every activity and every shift</span></div><div class="sw" data-di="headset"><span class="o">Fragmented communication</span><span class="ar">➜</span><span class="n">A single dedicated point of contact for smooth day-to-day coordination</span></div><div class="sw" data-di="happyguests"><span class="o">Base entertainment</span><span class="ar">➜</span><span class="n">Programming engineered to lift guest satisfaction and online review sentiment</span></div></div>
 <div class="grid">
-<div class="card"><h3>Bespoke Programming</h3><p>Every calendar shaped around your concept.</p></div>
-<div class="card"><h3>Polished Delivery</h3><p>Professional execution guests notice, without seeing the effort.</p></div>
-<div class="card"><h3>Lasting Impressions</h3><p>Moments guests carry home, and return for.</p></div>
-<div class="card"><h3>Collaborative Partnership</h3><p>Aligned with your goals, season after season.</p></div></div></section>
+<div class="card icard" data-di="calendar"><div class="th"><img data-timg="calendar" alt="Planning a bespoke program calendar"></div><div class="bd"><div class="ic">✨</div><h3>Bespoke Programming</h3><p>Every calendar shaped around your concept.</p></div></div>
+<div class="card icard" data-di="stagesil"><div class="th"><img data-timg="stagesil" alt="Stage prepared for a live performance"></div><div class="bd"><div class="ic">🎬</div><h3>Polished Delivery</h3><p>Professional execution guests notice, without seeing the effort.</p></div></div>
+<div class="card icard" data-di="fireworks"><div class="th"><img data-timg="fireworks" alt="Celebration fireworks"></div><div class="bd"><div class="ic">💫</div><h3>Lasting Impressions</h3><p>Moments guests carry home, and return for.</p></div></div>
+<div class="card icard" data-di="handshake"><div class="th"><img data-timg="handshake" alt="Partnership handshake"></div><div class="bd"><div class="ic">🤝</div><h3>Collaborative Partnership</h3><p>Aligned with your goals, season after season.</p></div></div></div></section>
 
 <section id="team" class="reveal"><div class="eyebrow">Our team</div><h2>Built Around Your Guests</h2>
 <p class="lead">Your guests arrive speaking many languages and carrying many expectations. We build every entertainment team with that reality in mind: entertainers, coordinators and hosts capable of making an international guest base feel personally welcomed, not merely accommodated. Team size and language composition are shaped around your hotel's guest profile, season and scale, never a fixed roster applied regardless of who is actually staying with you.</p>
 <div class="team" id="teamcards">
-<div class="card" data-t="Team composition aligned to your leading source markets."><h3>Matched To Your Market</h3></div>
-<div class="card" data-t="Entertainers drawn from multiple nationalities and backgrounds."><h3>Recruited Internationally</h3></div>
-<div class="card" data-t="Communication that reads tone and context, not just language."><h3>Fluent Hospitality</h3></div></div>
+<div class="card icard" data-di="poolwoman" data-t="Team composition aligned to your leading source markets."><div class="th"><img data-timg="poolwoman" alt="Guests enjoying the resort pool"></div><div class="bd"><div class="ic">🎯</div><h3>Matched To Your Market</h3></div></div>
+<div class="card icard" data-di="travelers" data-t="Entertainers drawn from multiple nationalities and backgrounds."><div class="th"><img data-timg="travelers" alt="Entertainers arriving from around the world"></div><div class="bd"><div class="ic">✈️</div><h3>Recruited Internationally</h3></div></div>
+<div class="card icard" data-di="welcome" data-t="Communication that reads tone and context, not just language."><div class="th"><img data-timg="welcome" alt="A warm welcome at the hotel"></div><div class="bd"><div class="ic">💬</div><h3>Fluent Hospitality</h3></div></div></div>
 <div id="teaminfo">Select a card.</div>
 <h3 style="margin-top:40px;color:var(--gold2)">Scaled To Your Hotel</h3>
 <p class="lead" style="margin-top:6px">Team structure and investment. Pricing is set per hotel, so none is shown here.</p>
 <div class="team">
-<div class="card"><h3>Program Director</h3><p>Team leadership &amp; planning</p></div>
-<div class="card"><h3>Activity Coordinator (Local)</h3><p>Sports &amp; daytime activities</p></div>
-<div class="card"><h3>Entertainment Lead (Local)</h3><p>Music, DJ &amp; show production</p></div>
-<div class="card"><h3>International Animation Team</h3><p>Multilingual guest engagement</p></div></div>
+<div class="card icard" data-di="stagesetup"><div class="th"><img data-timg="stagesetup" alt="Stage and production planning"></div><div class="bd"><div class="ic">🧭</div><h3>Program Director</h3><p>Team leadership &amp; planning</p></div></div>
+<div class="card icard" data-di="volleyball"><div class="th"><img data-timg="volleyball" alt="Beach volleyball activity"></div><div class="bd"><div class="ic">⚽</div><h3>Activity Coordinator (Local)</h3><p>Sports &amp; daytime activities</p></div></div>
+<div class="card icard" data-di="dj"><div class="th"><img data-timg="dj" alt="DJ and show production"></div><div class="bd"><div class="ic">🎤</div><h3>Entertainment Lead (Local)</h3><p>Music, DJ &amp; show production</p></div></div>
+<div class="card icard" data-di="carnival"><div class="th"><img data-timg="carnival" alt="International animation performers"></div><div class="bd"><div class="ic">🌍</div><h3>International Animation Team</h3><p>Multilingual guest engagement</p></div></div></div>
 <h3 style="margin-top:34px;color:var(--gold2)">Program frequency</h3>
-<div class="items"><span class="pill">Dance Show</span><span class="pill">Street Party</span><span class="pill">Foam Party</span><span class="pill">Live Singer</span><span class="pill">Duo Band</span><span class="pill">Fire or Light Show</span><span class="pill">Acrobatic Show</span><span class="pill">Oriental Show</span></div>
+<div class="tiles" id="freqgrid"></div>
 <p class="lead" style="margin-top:18px">This structure is designed to deliver a professional, energetic and genuinely diverse entertainment offering, scaled to match your hotel's specific needs.</p></section>
 
 <section id="day" class="reveal"><div class="eyebrow">Daytime program</div><h2>Fun, Energy, Connection</h2>
 <p class="lead">A rhythm of daytime activity that keeps guests active, social and smiling, structured around your resort's spaces and schedule.</p>
 <div class="tabs" data-g="d">
 <button class="tab act" data-p="d1">Morning · Awaken &amp; Move</button><button class="tab" data-p="d2">Midday · High Energy Focus</button><button class="tab" data-p="d3">Afternoon · Social &amp; Skill</button></div>
-<div class="panel act" id="d1"><img data-n="5" src="" alt="Daytime program slide"><div><h3>Morning</h3><ul><li>Morning Mobility &amp; Stretch</li><li>Boccia</li><li>Daily Program Announcements</li></ul></div></div>
-<div class="panel" id="d2"><img data-n="5" src="" alt="Daytime program slide"><div><h3>Midday</h3><ul><li>Aqua Aerobics</li><li>Water Polo</li><li>Poolside Games &amp; Pool Party</li><li>Beach Volleyball</li></ul></div></div>
-<div class="panel" id="d3"><img data-n="5" src="" alt="Daytime program slide"><div><h3>Afternoon</h3><ul><li>Football &amp; Mini-Tournaments</li><li>Table Tennis</li><li>Darts</li><li>Dance Workshop</li><li>Culinary Workshop</li></ul></div></div></section>
+<div class="panel act" id="d1"><div class="pim"><img data-timg="yoga" alt="Morning stretch on the beach"></div><div><h3>Morning</h3><ul><li data-di="yoga">Morning Mobility &amp; Stretch</li><li data-di="beachfoot">Boccia</li><li data-di="welcome">Daily Program Announcements</li></ul></div></div>
+<div class="panel" id="d2"><div class="pim"><img data-timg="aqua" alt="Aqua aerobics in the pool"></div><div><h3>Midday</h3><ul><li data-di="aqua">Aqua Aerobics</li><li data-di="aqua">Water Polo</li><li data-di="poolwoman">Poolside Games &amp; Pool Party</li><li data-di="volleyball">Beach Volleyball</li></ul></div></div>
+<div class="panel" id="d3"><div class="pim"><img data-timg="beachfoot" alt="Football on the beach"></div><div><h3>Afternoon</h3><ul><li data-di="beachfoot">Football &amp; Mini-Tournaments</li><li data-di="olympic">Table Tennis</li><li data-di="olympic">Darts</li><li data-di="dance">Dance Workshop</li><li data-di="staff">Culinary Workshop</li></ul></div></div></section>
 
 <section id="kids" class="reveal"><div class="eyebrow">Kids program</div><h2>Where Play Meets Discovery</h2>
 <p class="lead">A dedicated program where young guests play, create and make friends, giving parents genuine time to relax.</p>
-<div class="items" id="kidlist"></div><div class="panel act" style="margin-top:20px"><img data-n="6" src="" alt="Kids program slide"><div id="kidinfo"><h3>Pick an activity</h3></div></div></section>
+<div class="tiles" id="kidlist"></div><div class="panel act" style="margin-top:20px"><div class="pim"><img id="kidimg" data-timg="kidsclub" alt="Kids program"></div><div id="kidinfo"><h3>Pick an activity</h3></div></div></section>
 
 <section id="night" class="reveal"><div class="eyebrow">Evening program</div><h2>Spectacular Nights, By Design</h2>
 <p class="lead">As the sun sets, the program shifts gear: theatrical, high-energy entertainment that gives guests every reason to stay close to home.</p>
 <div class="tabs" data-g="n"><button class="tab act" data-p="n1">High-Energy &amp; Party</button><button class="tab" data-p="n2">Theatrical &amp; Visual Spectacle</button><button class="tab" data-p="n3">Interactive &amp; Hosting</button></div>
-<div class="panel act" id="n1"><img data-n="7" src="" alt="Evening program slide"><ul><li>Mini Disco</li><li>Beach Party</li><li>Foam Party</li></ul></div>
-<div class="panel" id="n2"><img data-n="7" src="" alt="Evening program slide"><ul><li>Light Show</li><li>Fire Show</li><li>Acrobatic Show</li><li>Fakir Show</li><li>Dance Show</li><li>Oriental Show</li></ul></div>
-<div class="panel" id="n3"><img data-n="7" src="" alt="Evening program slide"><ul><li>Live Hosting (MC)</li><li>Talent Show</li><li>Music Quiz Night</li></ul></div></section>
+<div class="panel act" id="n1"><div class="pim"><img data-timg="beachnight" alt="Beach party at night"></div><ul><li data-di="kidsdisco">Mini Disco</li><li data-di="beachnight">Beach Party</li><li data-di="foam">Foam Party</li></ul></div>
+<div class="panel" id="n2"><div class="pim"><img data-timg="fire2" alt="Fire show at night"></div><ul><li data-di="stagesil">Light Show</li><li data-di="fire">Fire Show</li><li data-di="acro">Acrobatic Show</li><li data-di="fire2">Fakir Show</li><li data-di="dance">Dance Show</li><li data-di="oriental">Oriental Show</li></ul></div>
+<div class="panel" id="n3"><div class="pim"><img data-timg="karaoke" alt="Hosting and quiz night"></div><ul><li data-di="karaoke">Live Hosting (MC)</li><li data-di="applause">Talent Show</li><li data-di="band">Music Quiz Night</li></ul></div></section>
 
 <section id="events" class="reveal"><div class="eyebrow">Signature events</div><h2>The Centerpiece Of Every Week</h2>
 <p class="lead">Beyond the nightly calendar, themed signature events give each week its own unforgettable centerpiece.</p>
-<div class="ev" id="evgrid"></div><div id="evnote">Click an event to pick it for your week.</div>
+<div class="ev" id="evgrid"></div>
+<div id="evview"><div class="im"><img id="evimg" alt=""></div><div class="cap"><b id="evname"></b><br><span id="evdesc"></span></div></div>
+<div id="evnote">Click an event to pick it for your week.</div>
 <p style="color:var(--mut);font-size:.82rem;margin-top:6px"><i>Styling and décor scaled to fit your hotel's agreement.</i></p></section>
 
 <section id="value" class="reveal"><div class="eyebrow">The value we bring</div><h2>Key Benefits &amp; What We Provide</h2>
-<div class="grid"><div class="card"><h3>Key benefits (the outcomes)</h3><p>• Spectacularly produced themed events and professional daytime programming<br>• Elevated guest satisfaction and stronger online review sentiment<br>• A meaningful contribution to your hotel's reputation and repeat-guest loyalty<br>• Experiences guests remember, and return for</p></div>
-<div class="card"><h3>What we provide (the foundation)</h3><p>• Professional uniforms &amp; team presentation<br>• High-quality costumes &amp; performance wardrobe<br>• Structured kids' entertainment programming<br>• Professional face painting &amp; styling<br>• Themed props &amp; accessories<br>• Large-scale special event production<br>• Festival &amp; themed celebration design</p></div></div></section>
+<div class="grid"><div class="card icard" data-di="applause"><div class="th"><img data-timg="applause" alt="Guests applauding a show"></div><div class="bd"><h3>Key benefits (the outcomes)</h3><p>• Spectacularly produced themed events and professional daytime programming<br>• Elevated guest satisfaction and stronger online review sentiment<br>• A meaningful contribution to your hotel's reputation and repeat-guest loyalty<br>• Experiences guests remember, and return for</p></div></div>
+<div class="card icard" data-di="costumes"><div class="th"><img data-timg="costumes" alt="Costumes and stage production"></div><div class="bd"><h3>What we provide (the foundation)</h3><p>• Professional uniforms &amp; team presentation<br>• High-quality costumes &amp; performance wardrobe<br>• Structured kids' entertainment programming<br>• Professional face painting &amp; styling<br>• Themed props &amp; accessories<br>• Large-scale special event production<br>• Festival &amp; themed celebration design</p></div></div></div></section>
 
 <section id="deck" class="reveal"><div class="eyebrow">The original proposal</div><h2>Browse The Deck</h2>
 <p class="lead">Click any slide to enlarge. Use the arrow keys to move through.</p><div class="deck" id="deckgrid"></div></section>
@@ -154,24 +251,42 @@ footer{text-align:center;padding:24px;color:var(--mut);font-size:.8rem;border-to
 <footer>King's United Entertainment Company · Partnership Proposal 2026/2027 · Red Sea, Egypt</footer>
 
 <div id="lb"><img id="lbi" alt=""><div class="c"><button id="pv">‹</button><span id="lbn"></span><button id="nx">›</button><button id="x">Close</button></div></div>
-<script src="d1.js"></script><script src="d2.js"></script><script src="d3.js"></script><script src="d4.js"></script>
+<div id="dv"><div class="dvc"><div class="im"><img id="dvi" alt=""></div><div class="tx"><h3 id="dvt"></h3><div id="dvd"></div><button id="dvx" class="btn" style="animation:none">Close</button></div></div></div>
+<script src="d1.js"></script><script src="d2.js"></script><script src="d3.js"></script><script src="d4.js"></script><script src="d5.js"></script><script src="d6.js"></script><script src="d7.js"></script><script src="d8.js"></script><script src="d9.js"></script><script src="d10.js"></script><script src="d11.js"></script><script>for(const k in PH)document.documentElement.style.setProperty("--p"+k,"url("+PH[k]+")")</script><!-- Background photos: Pexels (free license), ids 32393942, 12169315, 39591184, 39550243 -->
+<!-- Topic photos: Pexels (free license), ids 20898616,12327994,12571648,33175650,5946219,1613240,33934080,6172482,7693692,6474532,8866819,936018,27795342,41043980,4381848,2305097,5371677,2177813,12169045,9005458,30354454,4306970,8198205,1625355,36313289,29715464,26584359,5928334,27368850,5110016,8535188,37670385,36916877,8384294,7862539,11528240,6668292,8803690,29298514,34185066,18537377,5191740,37987884,6236960,36518565,7723838,7294211,1038180,18238117,20898292,34239110,19390704 -->
 <script>
 const P=n=>IMG[n];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 document.querySelectorAll('[data-x]').forEach(e=>e.src=IMG[e.dataset.x]);document.documentElement.style.setProperty('--hero','url('+IMG[1]+')');{const l=document.createElement('link');l.rel='icon';l.href=IMG.k;document.head.append(l)}
+$$('[data-timg]').forEach(e=>e.src=TIMG[e.dataset.timg]);
 addEventListener('scroll',()=>{$('#bar').style.width=100*scrollY/(document.body.scrollHeight-innerHeight)+'%'});
 (()=>{})()&&0;$$('.reveal').forEach(el=>{new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){el.classList.add('on');o.disconnect()}},{threshold:.05}).observe(el)});
 $$('.tabs').forEach(t=>t.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;t.querySelectorAll('.tab').forEach(x=>x.classList.toggle('act',x===b));const g=b.dataset.p[0];$$('.panel[id^='+g+']').forEach(p=>p.classList.toggle('act',p.id===b.dataset.p))}));
-$$('#teamcards .card').forEach(c=>c.onclick=()=>{$$('#teamcards .card').forEach(x=>x.classList.toggle('act',x===c));$('#teaminfo').textContent=c.dataset.t});
-const kids={"Mini Club & Kids Circle":0,"Arts & Crafts / Face Painting":0,"Treasure Hunts":0,"Games & Friendly Competitions":0,"Sports & Beach Activities":0,"Kids Shows & Mini Disco":0,"Evening Kids Program":0};
+/* detail modal: clicking any program, role or activity reveals a relevant moving image plus details */
+function detail(img,title,html){$('#dvi').src=TIMG[img]||img;$('#dvt').textContent=title;$('#dvd').innerHTML=html;$('#dv').classList.add('on')}
+$('#dvx').onclick=()=>$('#dv').classList.remove('on');$('#dv').addEventListener('click',e=>{if(e.target.id==='dv')$('#dv').classList.remove('on')});
+$$('.icard[data-di]').forEach(c=>c.addEventListener('click',()=>{const h=c.querySelector('h3'),p=c.querySelector('p');detail(c.dataset.di,h?h.textContent:'',p?'<p>'+p.innerHTML+'</p>':'')}));
+$$('.sw[data-di]').forEach(s=>s.addEventListener('click',()=>{const o=s.querySelector('.o').textContent,n=s.querySelector('.n').textContent;detail(s.dataset.di,'A Partnership, Not A Package','<p><s style="color:#aab">'+o+'</s></p><p style="margin-top:8px">◆ '+n+'</p>')}));
+$$('.panel li[data-di]').forEach(li=>li.addEventListener('click',()=>{const h=li.closest('.panel').querySelector('h3');detail(li.dataset.di,li.textContent,'<p>'+(h?h.textContent+' program':'')+' · tap the image to zoom</p>')}));
+$$('#teamcards .card').forEach(c=>c.onclick=e=>{$$('#teamcards .card').forEach(x=>x.classList.toggle('act',x===c));$('#teaminfo').textContent=c.dataset.t;if(e.isTrusted)detail(c.dataset.di,c.querySelector('h3').textContent,'<p>'+c.dataset.t+'</p>')});
+const kids=[["Mini Club & Kids Circle","kidsclub"],["Arts & Crafts / Face Painting","facepaint"],["Treasure Hunts","treasure"],["Games & Friendly Competitions","kidsgames"],["Sports & Beach Activities","kidsbeach"],["Kids Shows & Mini Disco","kidsdisco"],["Evening Kids Program","kidsmovie"]];
 const kd=[["Engaging by Design","Activities built for a range of ages."],["Play with Purpose","Creative, confidence-building activities."],["New Friendships","Shared games, shared holiday memories."],["A Dedicated Team","Attentive, carefully trained hosts."]];
-Object.keys(kids).forEach(k=>{const p=document.createElement('span');p.className='pill';p.textContent=k;p.onclick=()=>{$$('#kidlist .pill').forEach(x=>x.classList.toggle('act',x===p));$('#kidinfo').innerHTML='<h3>'+k+'</h3><ul>'+kd.map(a=>'<li><b>'+a[0]+'</b><br><span style="color:var(--mut)">'+a[1]+'</span></li>').join('')+'</ul>'};$('#kidlist').append(p)});
-const evs=["Carnival Night","Foam Party","Colour Party","Olympic Day","Inflatable Fun Day","White Party","African Night","Boho Night","Pharaonic Night","Pink Party","Aloha Party","Arabian Nights"];let sel=new Set;
-evs.forEach(n=>{const d=document.createElement('div');d.textContent=n;d.onclick=()=>{sel.has(n)?sel.delete(n):sel.add(n);d.classList.toggle('act');$('#evnote').textContent=sel.size?'Your week: '+[...sel].join(' · '):'Click an event to pick it for your week.'};$('#evgrid').append(d)});
+kids.forEach(k=>{const p=document.createElement('div');p.className='tile';const im=new Image;im.src=TIMG[k[1]];im.alt=k[0];const sp=document.createElement('span');sp.textContent=k[0];p.append(im,sp);p.onclick=()=>{$$('#kidlist .tile').forEach(x=>x.classList.toggle('act',x===p));$('#kidimg').src=TIMG[k[1]];$('#kidimg').alt=k[0];$('#kidinfo').innerHTML='<h3>'+k[0]+'</h3><ul>'+kd.map(a=>'<li><b>'+a[0]+'</b><br><span style="color:var(--mut)">'+a[1]+'</span></li>').join('')+'</ul>'};$('#kidlist').append(p)});
+const freq=[["Dance Show","dance","A choreographed production show with full costumes, staged weekly."],["Street Party","streetparty","An open-air street-style celebration that pulls the whole resort in."],["Foam Party","foam","Foam cannons, a DJ and non-stop dancing by the pool or beach."],["Live Singer","singer","A professional vocalist performing international favourites live."],["Duo Band","band","A live duo covering sunset, dinner and easy-listening sets."],["Fire or Light Show","fire","A choreographed fire and light spectacle after dark."],["Acrobatic Show","acro","Aerial and ground acrobatics by professional performers."],["Oriental Show","oriental","Classic oriental dance with authentic music and costume."]];
+freq.forEach(f=>{const d=document.createElement('div');d.className='tile';const im=new Image;im.src=TIMG[f[1]];im.alt=f[0];const sp=document.createElement('span');sp.textContent=f[0];d.append(im,sp);d.onclick=()=>detail(f[1],f[0],'<p>'+f[2]+'</p>');$('#freqgrid').append(d)});
+const evs=[["Carnival Night","carnival","Costumes, parade energy and street performers."],["Foam Party","foam","Foam cannons, DJ and non-stop dancing."],["Colour Party","holi","A powder-colour celebration at sunset."],["Olympic Day","olympic","Guests compete in fun team games all day."],["Inflatable Fun Day","inflatable","Giant inflatables on the beach and lawn."],["White Party","whiteparty","All-white dress code, an elegant night under the lights."],["African Night","african","Drums, dance and African rhythms."],["Boho Night","boho","Bohemian styling, lanterns and laid-back music."],["Pharaonic Night","pharaonic","Ancient-Egypt themed show, costume and décor."],["Pink Party","pink","Pink dress code, neon lights and feel-good pop."],["Aloha Party","aloha","A Hawaiian luau with leis and island beats."],["Arabian Nights","arabian","Lanterns, oriental music and Arabian atmosphere."]];let sel=new Set;
+evs.forEach(n=>{const d=document.createElement('div');d.className='evt';const im=new Image;im.src=TIMG[n[1]];im.alt=n[0];const sp=document.createElement('span');sp.textContent=n[0];d.append(im,sp);d.onclick=()=>{sel.has(n[0])?sel.delete(n[0]):sel.add(n[0]);d.classList.toggle('act');$('#evimg').src=TIMG[n[1]];$('#evimg').alt=n[0];$('#evname').textContent=n[0];$('#evdesc').textContent=n[2];$('#evview').classList.add('on');$('#evnote').textContent=sel.size?'Your week: '+[...sel].join(' · '):'Click an event to pick it for your week.'};$('#evgrid').append(d)});
 const names=["Cover","Who we are","What we offer","Our team","Daytime program","Kids program","Evening program","Signature events","Key benefits","Scaled to your hotel","Thank you"];let cur=0;
 function show(i){cur=(i+11)%11;$('#lbi').src=P(cur+1);$('#lbn').textContent=(cur+1)+' / 11 · '+names[cur];$('#lb').classList.add('on')}
+function zoom(src,label){cur=-1;$('#lbi').src=src;$('#lbn').textContent=label;$('#lb').classList.add('on')}
 for(let i=0;i<11;i++){const im=new Image;im.src=P(i+1);im.alt=names[i];im.loading='lazy';im.onclick=()=>show(i);$('#deckgrid').append(im)}
-$$('.panel img').forEach(i=>{i.src=P(i.dataset.n);i.onclick=()=>show(+i.dataset.n-1)});
-$('#pv').onclick=()=>show(cur-1);$('#nx').onclick=()=>show(cur+1);$('#x').onclick=()=>$('#lb').classList.remove('on');
-addEventListener('keydown',e=>{if(!$('#lb').classList.contains('on'))return;if(e.key=='ArrowRight')show(cur+1);if(e.key=='ArrowLeft')show(cur-1);if(e.key=='Escape')$('#lb').classList.remove('on')});
+$$('.panel .pim img').forEach(i=>{i.onclick=()=>zoom(i.src,i.alt)});
+$('#evimg').onclick=()=>zoom($('#evimg').src,$('#evname').textContent);
+$('#dvi').onclick=()=>zoom($('#dvi').src,$('#dvt').textContent);
+$('#pv').onclick=()=>{if(cur>=0)show(cur-1)};$('#nx').onclick=()=>{if(cur>=0)show(cur+1)};$('#x').onclick=()=>$('#lb').classList.remove('on');
+addEventListener('keydown',e=>{if($('#dv').classList.contains('on')&&e.key=='Escape'){$('#dv').classList.remove('on');return}if(!$('#lb').classList.contains('on'))return;if(e.key=='ArrowRight'&&cur>=0)show(cur+1);if(e.key=='ArrowLeft'&&cur>=0)show(cur-1);if(e.key=='Escape')$('#lb').classList.remove('on')});
+
+$$('.reveal').forEach(sec=>sec.querySelectorAll('.grid>*,.swg>*,.team>*,.items>*,.tiles>*,.ev>*').forEach((e,i)=>{e.classList.add('st');if(i%2)e.classList.add('alt');e.style.setProperty('--i',i%12)}));
+{const dk=$('#deckgrid'),b=document.createElement('div');b.className='dk';b.innerHTML='<button aria-label="Previous">‹</button><button aria-label="Next">›</button>';dk.after(b);const [a,c]=b.children;a.onclick=()=>dk.scrollBy({left:-480,behavior:'smooth'});c.onclick=()=>dk.scrollBy({left:480,behavior:'smooth'})}
+{const tc=$$('#teamcards .card');let u=0,i=0;tc[0].click();tc.forEach(c=>c.addEventListener('click',e=>{if(e.isTrusted)u=1}));setInterval(()=>{if(!u){i=(i+1)%tc.length;tc[i].click()}},4500)}
 </script></body></html>
